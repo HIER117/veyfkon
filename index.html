@@ -107,11 +107,18 @@
   <section id="kontakt">
     <h2>Kontaktieren Sie uns</h2>
     <p>Sie haben Fragen oder möchten sich beraten lassen? Schreiben Sie uns – wir antworten persönlich und vertraulich.</p>
-    <form action="https://formspree.io/f/your-id" method="POST">
-      <input type="text" name="name" placeholder="Ihr Name" required><br>
-      <input type="email" name="email" placeholder="Ihre E-Mail" required><br>
-      <textarea name="nachricht" placeholder="Ihre Nachricht" rows="6" required></textarea><br>
-      <button type="submit" class="btn">Nachricht absenden</button>
+    <!-- modify this form HTML and place wherever you want your form -->
+    <form action="https://formspree.io/f/xnnzgvng" method="POST">
+      <label style="display:block; margin-bottom:15px; text-align:left;">
+        Ihre E-Mail:
+        <input type="email" name="email" placeholder="Ihre E-Mail" required style="width:100%; padding:12px; margin-top:5px;">
+      </label>
+      <label style="display:block; margin-bottom:15px; text-align:left;">
+        Ihre Nachricht:
+        <textarea name="message" rows="6" placeholder="Ihre Nachricht" required style="width:100%; padding:12px; margin-top:5px;"></textarea>
+      </label>
+      <!-- weitere Formularfelder können hier hinzugefügt werden -->
+      <button type="submit" class="btn">Absenden</button>
     </form>
   </section>
 
