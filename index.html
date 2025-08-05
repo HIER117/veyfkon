@@ -1,226 +1,147 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veyfkon – IT Security & Webentwicklung</title>
-
-  <!-- Google Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/feather-icons"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Veyfkon – Ihr Partner für IT-Sicherheit & digitale Schutzmaßnahmen">
+  <title>Veyfkon – IT-Security</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <style>
-    :root {
-      --blue: #2563eb;
-      --gray: #f8fafc;
-      --text: #1e293b;
-      --accent: #38bdf8;
-    }
-
-    body {
+    * {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--gray);
-      color: var(--text);
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      line-height: 1.6;
+      background-color: #0e0e0e;
+      color: #f0f0f0;
       scroll-behavior: smooth;
     }
-
     header {
-      background: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: #111;
+      padding: 20px 40px;
       position: sticky;
       top: 0;
-      z-index: 1000;
-    }
-
-    nav {
-      max-width: 1100px;
-      margin: auto;
-      padding: 1rem 2rem;
+      z-index: 999;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
+    header h1 {
+      font-size: 24px;
+      color: #00d4ff;
+    }
     nav a {
-      margin-left: 1.5rem;
-      color: var(--text);
+      color: #f0f0f0;
+      margin-left: 20px;
       text-decoration: none;
-      font-weight: 600;
+      transition: color 0.3s;
     }
-
     nav a:hover {
-      color: var(--accent);
+      color: #00d4ff;
     }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 6rem 2rem;
-      background: linear-gradient(to right, #e0f2fe, #f0f9ff);
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #475569;
-      max-width: 600px;
-      margin-bottom: 2rem;
-    }
-
-    .hero a {
-      background-color: var(--blue);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    .hero a:hover {
-      background-color: #1d4ed8;
-    }
-
     section {
+      padding: 80px 40px;
       max-width: 1100px;
-      margin: auto;
-      padding: 4rem 2rem;
+      margin: 0 auto;
     }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: var(--blue);
+    #hero {
+      text-align: center;
     }
-
-    .grid {
+    #hero h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    #hero p {
+      font-size: 20px;
+      color: #ccc;
+    }
+    .btn {
+      background-color: #00d4ff;
+      color: #000;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 30px;
+    }
+    .btn:hover {
+      background-color: #00aacc;
+    }
+    .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      gap: 30px;
     }
-
     .card {
-      background: white;
+      background: #1c1c1c;
+      padding: 30px;
       border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-      cursor: pointer;
+      transition: transform 0.3s;
     }
-
     .card:hover {
       transform: translateY(-5px);
     }
-
-    .card i {
-      color: var(--accent);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
     footer {
-      background: #e2e8f0;
-      padding: 2rem;
+      background: #111;
+      padding: 30px 40px;
       text-align: center;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: var(--blue);
-      text-decoration: none;
-      margin: 0 0.5rem;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+      font-size: 14px;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Veyfkon</h1>
+    <nav>
+      <a href="#services">Leistungen</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
 
-<header>
-  <nav>
-    <div><strong>Veyfkon</strong></div>
-    <div>
-      <a href="#" onclick="confirmEmail(event)">Leistungen</a>
-      <a href="#" onclick="confirmEmail(event)">Webentwicklung</a>
-      <a href="#" onclick="confirmEmail(event)">Hardware</a>
-      <a href="#" onclick="confirmEmail(event)">Kontakt</a>
+  <section id="hero">
+    <h2>IT-Sicherheit für Unternehmen</h2>
+    <p>Veyfkon schützt Ihre digitalen Werte mit modernen Sicherheitslösungen und individueller Beratung.</p>
+    <a href="#kontakt" class="btn">Jetzt kontaktieren</a>
+  </section>
+
+  <section id="services">
+    <h2>Unsere Leistungen</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Penetrationstests</h3>
+        <p>Simulierte Angriffe zur Aufdeckung von Schwachstellen in Ihren Systemen.</p>
+      </div>
+      <div class="card">
+        <h3>Security Audit</h3>
+        <p>Analyse Ihrer IT-Infrastruktur zur Erkennung sicherheitskritischer Lücken.</p>
+      </div>
+      <div class="card">
+        <h3>Beratung & Schulung</h3>
+        <p>Schulung Ihrer Mitarbeitenden und Entwicklung von Sicherheitskonzepten.</p>
+      </div>
     </div>
-  </nav>
-</header>
+  </section>
 
-<section class="hero" data-aos="fade-up">
-  <h1>IT-Security & Webentwicklung für moderne Unternehmen</h1>
-  <p>Veyfkon schützt Ihre Systeme und baut gleichzeitig sichere, moderne und datenschutzkonforme Webseiten.</p>
-  <a href="#" onclick="confirmEmail(event)">Jetzt Kontakt aufnehmen</a>
-</section>
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Nutzen Sie unser Kontaktformular für eine unverbindliche Beratung:</p>
+    <form action="https://formspree.io/f/your-id" method="POST">
+      <input type="text" name="name" placeholder="Ihr Name" required><br><br>
+      <input type="email" name="email" placeholder="Ihre E-Mail" required><br><br>
+      <textarea name="nachricht" placeholder="Ihre Nachricht" rows="6" required></textarea><br><br>
+      <button type="submit" class="btn">Absenden</button>
+    </form>
+  </section>
 
-<section id="leistungen">
-  <h2 data-aos="fade-right">IT-Security Leistungen</h2>
-  <div class="grid">
-    <div class="card" data-aos="zoom-in" onclick="window.location.href='mailto:kontakt@veyfkon.de'"><i data-feather="shield"></i><strong>Penetration Testing</strong><p>Web-, Netzwerk- & API-Pentests zur Schwachstellenanalyse.</p></div>
-    <div class="card" data-aos="zoom-in" onclick="window.location.href='mailto:kontakt@veyfkon.de'"><i data-feather="alert-triangle"></i><strong>Audits & Beratung</strong><p>DSGVO, IT-Compliance und Sicherheitskonzepte individuell angepasst.</p></div>
-    <div class="card" data-aos="zoom-in" onclick="window.location.href='mailto:kontakt@veyfkon.de'"><i data-feather="users"></i><strong>Awareness-Trainings</strong><p>Sensibilisierung Ihrer Mitarbeitenden für digitale Gefahren.</p></div>
-  </div>
-</section>
-
-<section id="web">
-  <h2 data-aos="fade-left">Webentwicklung</h2>
-  <div class="grid">
-    <div class="card" data-aos="fade-up" onclick="window.location.href='mailto:kontakt@veyfkon.de'"><i data-feather="code"></i><strong>Moderne Webseiten</strong><p>Responsives Webdesign, UX optimiert & technisch durchdacht.</p></div>
-    <div class="card" data-aos="fade-up" onclick="window.location.href='mailto:kontakt@veyfkon.de'"><i data-feather="lock"></i><strong>Sicher & DSGVO-konform</strong><p>Hosting, Cookie-Lösungen und Datenverarbeitung rechtssicher umgesetzt.</p></div>
-    <div class="card" data-aos="fade-up" onclick="window.location.href='mailto:kontakt@veyfkon.de'"><i data-feather="trending-up"></i><strong>SEO & Performance</strong><p>Schnelle Ladezeiten und grundlegende Optimierung für Suchmaschinen.</p></div>
-  </div>
-</section>
-
-<section id="hardware">
-  <h2 data-aos="fade-right">Hardware & Nachhaltigkeit</h2>
-  <div class="grid">
-    <div class="card" data-aos="flip-left" onclick="window.location.href='mailto:kontakt@veyfkon.de'"><i data-feather="cpu"></i><strong>Nachhaltige Auswahl</strong><p>Refurbished Geräte & energieeffiziente Lösungen.</p></div>
-    <div class="card" data-aos="flip-left" onclick="window.location.href='mailto:kontakt@veyfkon.de'"><i data-feather="home"></i><strong>Heimnetzwerke</strong><p>Aufbau sicherer Netzwerklösungen für zu Hause oder Büro.</p></div>
-    <div class="card" data-aos="flip-left" onclick="window.location.href='mailto:kontakt@veyfkon.de'"><i data-feather="settings"></i><strong>IT-Komponenten</strong><p>Beratung & Einrichtung zukunftssicherer Hardware.</p></div>
-  </div>
-</section>
-
-<section id="kontakt">
-  <h2 data-aos="zoom-in">Kontakt</h2>
-  <p data-aos="fade-up">Sie möchten Ihr Projekt starten oder brauchen Beratung? Schreiben Sie uns:</p>
-  <p data-aos="fade-up"><a href="#" onclick="confirmEmail(event)"><strong>kontakt@veyfkon.de</strong></a></p>
-</section>
-
-<footer>
-  <p>&copy; 2025 Veyfkon – IT Security & Webentwicklung</p>
-  <p><a href="#">Impressum</a> | <a href="#">Datenschutz</a></p>
-</footer>
-
-<!-- JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-  feather.replace();
-</script>
-<script>
-  function confirmEmail(event) {
-    event.preventDefault();
-    if (confirm('Möchten Sie wirklich eine E-Mail an kontakt@veyfkon.de senden?')) {
-      window.location.href = 'mailto:kontakt@veyfkon.de';
-    }
-  }
   <footer>
-  <p><a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a> | <a href="agb.html">AGB</a></p>
-
-</footer>
-
-</script>
+    &copy; 2025 Veyfkon – IT-Security | <a href="#" style="color:#aaa">Datenschutz</a> | <a href="#" style="color:#aaa">Impressum</a>
+  </footer>
 </body>
 </html>
