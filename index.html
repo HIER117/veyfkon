@@ -87,6 +87,37 @@
     .card:hover {
       transform: translateY(-5px);
     }
+    #kontakt {
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      padding: 80px 40px;
+      margin-top: 80px;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+      text-align: center;
+    }
+    #kontakt h2 {
+      font-size: 36px;
+      color: #00d4ff;
+      margin-bottom: 10px;
+    }
+    #kontakt p {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: none;
+      background-color: #2a2a2a;
+      color: #f0f0f0;
+      font-size: 16px;
+    }
+    input:focus, textarea:focus {
+      outline: 2px solid #00d4ff;
+    }
     footer {
       background: #111;
       padding: 30px 40px;
@@ -130,13 +161,13 @@
   </section>
 
   <section id="kontakt">
-    <h2>Kontakt</h2>
-    <p>Nutzen Sie unser Kontaktformular für eine unverbindliche Beratung:</p>
+    <h2>Kontaktieren Sie uns</h2>
+    <p>Sie haben Fragen oder möchten sich beraten lassen? Schreiben Sie uns – wir antworten persönlich und vertraulich.</p>
     <form action="https://formspree.io/f/your-id" method="POST">
-      <input type="text" name="name" placeholder="Ihr Name" required><br><br>
-      <input type="email" name="email" placeholder="Ihre E-Mail" required><br><br>
-      <textarea name="nachricht" placeholder="Ihre Nachricht" rows="6" required></textarea><br><br>
-      <button type="submit" class="btn">Absenden</button>
+      <input type="text" name="name" placeholder="Ihr Name" required><br>
+      <input type="email" name="email" placeholder="Ihre E-Mail" required><br>
+      <textarea name="nachricht" placeholder="Ihre Nachricht" rows="6" required></textarea><br>
+      <button type="submit" class="btn">Nachricht absenden</button>
     </form>
   </section>
 
