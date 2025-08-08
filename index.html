@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -22,7 +23,7 @@
     .btn:hover { background: #00aacc; }
     .hero-graphic { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120%; height: 100%; opacity: 0.15; pointer-events: none; }
     .hero-graphic svg { width: 100%; height: 100%; }
-    /* Other Sections */
+    /* Other Sections */a
     .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
     .card { background: #1c1c1c; padding: 30px; border-radius: 12px; transition: transform 0.3s, background 0.3s; }
     .card:hover { transform: translateY(-5px); background: #222; }
@@ -43,6 +44,7 @@
       <a href="#services">Leistungen</a>
       <a href="#kontakt">Kontakt</a>
       <a href="ueber-uns.html">Über uns</a>
+      <a href="#referenzen">Partner Projekte</a>
     </nav>
   </header>
 
@@ -77,38 +79,38 @@
 
   <section id="services">
     <h2>Unsere Leistungen & Kompetenzen</h2>
-    <div class="services">
+    <div class="services" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;">
       <div class="card">
-        <h3>⚙️ IT-Onsite-Support</h3>
-        <p>Schnelle Fehleranalyse & -behebung vor Ort im 1st und 2nd Level Support.</p>
+        <h3⚙️ IT-Onsite-Support</h3>
+        <p>Vor-Ort-Service für 1st &amp; 2nd Level Support – schnelle Fehleranalyse &amp; Behebung.</p>
       </div>
       <div class="card">
         <h3>🌐 Remote Helpdesk</h3>
-        <p>Fernwartung & Helpdesk-Support inklusive Softwaredeployment und Systemupdates.</p>
+        <p>Effiziente Fernwartung, Helpdesk-Support &amp; automatisiertes Softwaredeployment.</p>
       </div>
       <div class="card">
-        <h3>🔗 Systemintegration & Netzwerk</h3>
-        <p>Planung, Aufbau & Verwaltung von Netzwerkinfrastrukturen (AD, DNS, DHCP, WDS) und Virtualisierung.</p>
+        <h3>🔗 Systemintegration &amp; Netzwerk</h3>
+        <p>Planung, Aufbau &amp; Verwaltung von Netzwerken (AD, DNS, DHCP, WDS) und Virtualisierung.</p>
       </div>
       <div class="card">
         <h3>💾 Softwaredeployment</h3>
-        <p>Automatisierte Installation von Betriebssystemen und Anwendungen per WDS & MDT.</p>
+        <p>Automatisierte OS- und Anwendungsinstallationen via WDS &amp; MDT.</p>
       </div>
       <div class="card">
         <h3>🖥️ Hardware-Installation</h3>
-        <p>Einrichtung von Workstations, Laptops und Peripheriegeräten – auch in Massenrollouts.</p>
+        <p>Einrichtung von Workstations, Laptops &amp; Peripherie auch Massenrollouts.</p>
       </div>
       <div class="card">
         <h3>🎓 IT-Schulungen</h3>
-        <p>Praxiserprobte Trainings für Mitarbeitende zu System- und Sicherheitskonzepten.</p>
+        <p>Praxiserprobte Trainings zu System- und Sicherheitskonzepten für Mitarbeitende.</p>
       </div>
       <div class="card">
-        <h3>🛡️ IT-Sicherheit & Backup</h3>
-        <p>Entwicklung und Umsetzung von Backup-Strategien, Sicherheitschecks & Datenschutzmaßnahmen.</p>
+        <h3>🛡️ IT-Sicherheit &amp; Backup</h3>
+        <p>Backup-Strategien, Sicherheitschecks &amp; Datenschutzmaßnahmen umzusetzen.</p>
       </div>
       <div class="card">
-        <h3>🔧 Support-Wartung & Beratung</h3>
-        <p>Regelmäßige Wartung, Performance-Optimierung & individuelle IT-Beratung.</p>
+        <h3>🔧 Wartung &amp; Beratung</h3>
+        <p>Regelmäßige Systemwartung, Performance-Optimierung &amp; individuelle Beratung.</p>
       </div>
     </div>
     <div style="text-align:center; margin-top:40px;">
@@ -128,8 +130,33 @@
         Ihre Nachricht:
         <textarea name="message" rows="6" placeholder="Ihre Nachricht" required style="width:100%; padding:12px; margin-top:5px;"></textarea>
       </label>
-      <button type="submit" class="btn">Send</button>
+      <button type="submit" class="btn">Absenden</button>
     </form>
+  </section>
+
+  <!-- Portfolio / Referenzen -->
+  <section id="referenzen">
+    <h2>Partner Projekte (Live-Demo)</h2>
+    <div class="services" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; margin-top:20px;">
+      <div class="card" style="text-align:center;">
+        <h3>ImmoTours Türkei</h3>
+        <iframe src="https://immotours-tuerkei.de" title="ImmoTours Türkei" 
+                style="width:100%; height:200px; border:1px solid #444; border-radius:8px;">
+        </iframe>
+        <div style="margin-top:10px;">
+          <a href="https://immotours-tuerkei.de" target="_blank" class="btn" style="background:#000; color:#FFD700;">Zur Originalseite</a>
+        </div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <h3>LC Express</h3>
+        <iframe src="https://www.lahmacunexpress.de" title="Lahmacun Express" 
+                style="width:100%; height:200px; border:1px solid #444; border-radius:8px;">
+        </iframe>
+        <div style="margin-top:10px;">
+          <a href="https://www.lahmacunexpress.de" target="_blank" class="btn" style="background:#ff6600; color:#ffffff;">Zur Originalseite</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
