@@ -1,165 +1,165 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Veyfkon – Ihr Partner für IT-Sicherheit & digitale Schutzmaßnahmen">
-  <title>Veyfkon – IT-Security</title>
+  <meta name="theme-color" content="#0e0e0e">
+  <title>Veyfkon – IT‑Security</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
-    body { line-height: 1.6; background: #0e0e0e; color: #f0f0f0; scroll-behavior: smooth; }
-    header { background: #111; padding: 20px 40px; position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
-    header h1 { font-size: 24px; color: #00d4ff; }
-    nav a { color: #f0f0f0; margin-left: 20px; text-decoration: none; transition: color 0.3s; }
-    nav a:hover { color: #00d4ff; }
-    section { padding: 80px 40px; max-width: 1100px; margin: 0 auto; }
-    /* Hero Styles */
-    #hero { position: relative; text-align: center; overflow: hidden; padding: 120px 40px 100px; }
-    #hero h2 { font-size: 48px; margin-bottom: 20px; position: relative; z-index: 2; }
-    #hero p { font-size: 20px; color: #ccc; position: relative; z-index: 2; }
-    .btn { display: inline-block; margin-top: 30px; padding: 12px 24px; background: #00d4ff; color: #000; border-radius: 8px; font-weight: bold; text-decoration: none; position: relative; z-index: 2; }
-    .btn:hover { background: #00aacc; }
-    .hero-graphic { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120%; height: 100%; opacity: 0.15; pointer-events: none; }
-    .hero-graphic svg { width: 100%; height: 100%; }
-    /* Other Sections */a
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .card { background: #1c1c1c; padding: 30px; border-radius: 12px; transition: transform 0.3s, background 0.3s; }
-    .card:hover { transform: translateY(-5px); background: #222; }
-    #kontakt { background: #1c1c1c; border-radius: 12px; padding: 80px 40px; margin-top: 80px; box-shadow: 0 0 20px rgba(0,212,255,0.2); text-align: center; }
-    #kontakt h2 { font-size: 36px; color: #00d4ff; margin-bottom: 10px; }
-    #kontakt p { font-size: 18px; color: #ccc; margin-bottom: 30px; }
-    input, textarea { width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 6px; border: none; background: #2a2a2a; color: #f0f0f0; font-size: 16px; }
-    input:focus, textarea:focus { outline: 2px solid #00d4ff; }
-    footer { background: #111; padding: 30px 40px; text-align: center; font-size: 14px; color: #aaa; }
-    footer a { color: #00d4ff; text-decoration: none; margin: 0 10px; }
-    footer a:hover { text-decoration: underline; }
+    :root{
+      --bg:#0e0e0e; --panel:#1c1c1c; --muted:#ccc; --accent:#00d4ff; --accent-contrast:#000; --card:#2a2a2a;
+      --radius:12px; --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:'Roboto',sans-serif;line-height:1.6;background:var(--bg);color:#f0f0f0;scroll-behavior:smooth}
+
+    header{position:sticky;top:0;z-index:100;background:#111;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+    header h1{color:var(--accent);font-size:20px}
+    nav{display:flex;gap:18px}
+    nav a{color:inherit;text-decoration:none;font-weight:500}
+    nav a:hover,nav a:focus{color:var(--accent);outline:none}
+
+    main{max-width:var(--maxw);margin:0 auto;padding:40px}
+    section{padding:56px 0}
+
+    /* Hero */
+    #hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:88px 24px;border-radius:var(--radius);position:relative;overflow:hidden}
+    #hero .panel{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:48px;border-radius:var(--radius);width:100%}
+    #hero h2{font-size:clamp(28px,4.2vw,48px);margin-bottom:14px}
+    #hero p{color:var(--muted);max-width:900px}
+    .btn{display:inline-block;margin-top:22px;padding:12px 20px;border-radius:10px;background:var(--accent);color:var(--accent-contrast);font-weight:700;text-decoration:none}
+    .btn:focus{outline:3px solid rgba(0,212,255,0.15)}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+    .card{background:var(--panel);padding:22px;border-radius:12px;transition:transform .25s,box-shadow .25s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,.6)}
+    .card h3{margin-bottom:8px}
+    .muted{color:var(--muted)}
+
+    /* Kontakt */
+    #kontakt{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:48px;border-radius:var(--radius);box-shadow:0 6px 30px rgba(0,0,0,.6)}
+    form{max-width:760px;margin:0 auto;text-align:left}
+    label{display:block;margin-bottom:14px;font-weight:600}
+    input[type="email"],textarea,input[type="text"]{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:var(--card);color:inherit;font-size:16px}
+    input:focus,textarea:focus{outline:2px solid var(--accent)}
+    .form-row{display:grid;grid-template-columns:1fr;gap:12px}
+
+    footer{padding:28px 0;text-align:center;color:#aaa;font-size:14px}
+    footer a{color:var(--accent);text-decoration:none}
+
+    /* Accessibility */
+    a:focus{outline:3px solid rgba(0,212,255,0.12);outline-offset:2px}
+
+    /* Responsive tweaks */
+    @media(min-width:900px){main{padding:60px}header h1{font-size:22px}header{padding:20px 48px}}
   </style>
 </head>
 <body>
   <header>
     <h1>Veyfkon</h1>
-    <nav>
+    <nav aria-label="Hauptnavigation">
       <a href="#services">Leistungen</a>
       <a href="#kontakt">Kontakt</a>
-      <a href="ueber-uns.html">Veyfkon</a>
-      <a href="#referenzen">Partner Projekte</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="#referenzen">Referenzen</a>
     </nav>
   </header>
 
-  
-          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M40 0 L0 0 0 40" fill="none" stroke="#00d4ff" stroke-width="0.5"/>
-          </pattern>
-        </defs>
-        <rect width="800" height="400" fill="#1c1c1c" rx="12"/>
-        <rect width="800" height="400" fill="url(#grid)"/>
-        <g> transform="translate(300,100)">
-          <rect x="0" y="0" width="200" height="200" rx="16" fill="#00d4ff" opacity="0.2"/>
-          <path d="M50 150 L50 100 Q50 70 80 70 L120 70 Q150 70 150 100 L150 150 Z" fill="#00d4ff" />
-          <circle cx="100" cy="110" r="15" fill="#000"/>
-          <circle cx="100" cy="110" r="8" fill="#00d4ff"/>
-        </g>
-      </svg>
-    </div>
-    <h2>IT-Sicherheit für Unternehmen</h2>
-    <p>Veyfkon schützt Ihre digitalen Werte mit modernen Sicherheitslösungen und individueller Beratung.</p>
-    <a href="tel:01632229705" class="btn">Jetzt anrufen</a>
-  </section>
+  <main>
+    <section id="hero" aria-labelledby="hero-title">
+      <div class="panel">
+        <h2 id="hero-title">IT‑Sicherheit für Unternehmen</h2>
+        <p>Veyfkon schützt Ihre digitalen Werte mit modernen Sicherheitslösungen, individuellen Schutzkonzepten und praktischer Beratung — von Backup‑Strategien bis Incident Response.</p>
+        <a class="btn" href="tel:+491632229705">Jetzt anrufen</a>
+      </div>
+    </section>
 
-  <section style="text-align:center;">
-    <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=800&q=80" 
-         alt="Cybersecurity Illustration" 
-         style="max-width: 100%; border-radius: 12px; margin-top: 40px;">
-  </section>
+    <section aria-hidden="false" style="text-align:center">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=1200&q=80" alt="Illustration: Cybersecurity" style="max-width:100%;border-radius:12px;">
+    </section>
 
-  <section id="services">
-    <h2> Leistungen & Kompetenzen</h2>
-    <div class="services" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;">
-      <div class="card">
-        <h3>⚙️ IT-Onsite-Support</h3>
-        <p>Vor-Ort-Service für 1st &amp; 2nd Level Support</p>
+    <section id="services" aria-labelledby="services-title">
+      <h2 id="services-title">Leistungen &amp; Kompetenzen</h2>
+      <div class="services" style="margin-top:18px">
+        <article class="card" aria-labelledby="s1"><h3 id="s1">⚙️ IT‑Onsite‑Support</h3><p class="muted">Vor‑Ort‑Service für 1st &amp; 2nd Level Support.</p></article>
+        <article class="card" aria-labelledby="s2"><h3 id="s2">🌐 Remote Helpdesk</h3><p class="muted">Effiziente Fernwartung und Helpdesk‑Lösungen.</p></article>
+        <article class="card" aria-labelledby="s3"><h3 id="s3">🔗 Systemintegration &amp; Netzwerk</h3><p class="muted">Planung, Aufbau und Verwaltung von Netzwerken, Virtualisierung.</p></article>
+        <article class="card" aria-labelledby="s4"><h3 id="s4">💾 Softwaredeployment</h3><p class="muted">Automatisierte OS‑ und Anwendungsinstallationen.</p></article>
+        <article class="card" aria-labelledby="s5"><h3 id="s5">🖥️ Hardware‑Installation</h3><p class="muted">Einrichtung von Workstations, Laptops &amp; Peripherie.</p></article>
+        <article class="card" aria-labelledby="s6"><h3 id="s6">🎓 IT‑Schulungen</h3><p class="muted">Praxiserprobte Trainings für Mitarbeitende.</p></article>
+        <article class="card" aria-labelledby="s7"><h3 id="s7">🛡️ IT‑Sicherheit &amp; Backup</h3><p class="muted">Backup‑Strategien, Sicherheitschecks und Notfallplanung.</p></article>
+        <article class="card" aria-labelledby="s8"><h3 id="s8">🔧 Wartung &amp; Beratung</h3><p class="muted">Regelmäßige Wartung, Performance‑Optimierung &amp; Beratung.</p></article>
       </div>
-      <div class="card">
-        <h3>🌐 Remote Helpdesk</h3>
-        <p>Effiziente Fernwartung, Helpdesk-Support &amp;</p>
-      </div>
-      <div class="card">
-        <h3>🔗 Systemintegration &amp; Netzwerk</h3>
-        <p>Planung, Aufbau &amp; Verwaltung von Netzwerken und Virtualisierung.</p>
-      </div>
-      <div class="card">
-        <h3>💾 Softwaredeployment</h3>
-        <p>Automatisierte OS- und Anwendungsinstallationen</p>
-      </div>
-      <div class="card">
-        <h3>🖥️ Hardware-Installation</h3>
-        <p>Einrichtung von Workstations, Laptops &amp; Peripherie auch Massenrollouts.</p>
-      </div>
-      <div class="card">
-        <h3>🎓 IT-Schulungen</h3>
-        <p>Praxiserprobte Trainings zu System- und Sicherheitskonzepten für Mitarbeitende.</p>
-      </div>
-      <div class="card">
-        <h3>🛡️ IT-Sicherheit &amp; Backup</h3>
-        <p>Backup-Strategien, Sicherheitschecks &amp;</p>
-      </div>
-      <div class="card">
-        <h3>🔧 Wartung &amp; Beratung</h3>
-        <p>Regelmäßige Systemwartung, Performance-Optimierung &amp; individuelle Beratung.</p>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:40px;">
-      <a href="#kontakt" class="btn">Kostenloses Erstgespräch vereinbaren</a>
-    </div>
-  </section>
 
-  <section id="kontakt">
-    <h2>Kontakt</h2>
-    <p>Sie haben Fragen oder möchten sich beraten lassen?</p>
-    <form action="https://formspree.io/f/xnnzgvng" method="POST">
-      <label style="display:block; margin-bottom:15px; text-align:left;">
-        Ihre E-Mail:
-        <input type="email" name="email" placeholder="Ihre E-Mail" required style="width:100%; padding:12px; margin-top:5px;">
-      </label>
-      <label style="display:block; margin-bottom:15px; text-align:left;">
-        Ihre Nachricht:
-        <textarea name="message" rows="6" placeholder="Ihre Nachricht" required style="width:100%; padding:12px; margin-top:5px;"></textarea>
-      </label>
-      <button type="submit" class="btn">Absenden</button>
-    </form>
-  </section>
-  <!-- Portfolio / Referenzen -->
-  <section id="referenzen">
-    <h2>Partner Projekte (Live-Demo)</h2>
-    <div class="services" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; margin-top:20px;">
-      <div class="card" style="text-align:center;">
-        <h3>ImmoTours Türkei</h3>
-        <iframe src="https://immotours-tuerkei.de" title="ImmoTours Türkei" 
-                style="width:100%; height:200px; border:1px solid #444; border-radius:8px;">
-        </iframe>
-        <div style="margin-top:10px;">
-          <a href="https://immotours-tuerkei.de" target="_blank" class="btn" style="background:#000; color:#FFD700;">Zur Originalseite</a>
+      <div style="text-align:center;margin-top:26px">
+        <a href="#kontakt" class="btn">Kostenloses Erstgespräch vereinbaren</a>
+      </div>
+    </section>
+
+    <section id="kontakt" aria-labelledby="kontakt-title">
+      <h2 id="kontakt-title">Kontakt</h2>
+      <p class="muted">Sie haben Fragen oder möchten sich beraten lassen? Schreiben Sie uns oder rufen Sie an.</p>
+
+      <form id="contact-form" action="https://formspree.io/f/xnnzgvng" method="POST" novalidate>
+        <!-- Formspree: optional subject and honeypot -->
+        <input type="hidden" name="_subject" value="Neue Anfrage von Veyfkon-Website">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="form-row">
+          <label for="email">Ihre E‑Mail</label>
+          <input id="email" type="email" name="email" placeholder="Ihre E‑Mail" required autocomplete="email">
+
+          <label for="message">Ihre Nachricht</label>
+          <textarea id="message" name="message" rows="6" placeholder="Ihre Nachricht" required></textarea>
+        </div>
+
+        <div style="text-align:center;margin-top:12px">
+          <button id="submit-btn" type="submit" class="btn">Absenden</button>
+        </div>
+      </form>
+
+      <p id="form-status" style="text-align:center;margin-top:12px;color:#9bdcff;display:none">Danke — Ihre Nachricht wird gesendet…</p>
+    </section>
+
+    <section id="referenzen">
+      <h2>Partner &amp; Live‑Demos</h2>
+      <div class="services" style="margin-top:18px">
+        <div class="card" style="text-align:center">
+          <h3>ImmoTours Türkei</h3>
+          <iframe loading="lazy" src="https://immotours-tuerkei.de" title="ImmoTours Türkei" style="width:100%;height:200px;border:1px solid rgba(255,255,255,0.04);border-radius:8px" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>
+          <div style="margin-top:10px"><a class="btn" href="https://immotours-tuerkei.de" target="_blank" rel="noopener noreferrer" style="background:#000;color:#FFD700">Zur Originalseite</a></div>
+        </div>
+
+        <div class="card" style="text-align:center">
+          <h3>LC Express</h3>
+          <iframe loading="lazy" src="https://www.lahmacunexpress.de" title="Lahmacun Express" style="width:100%;height:200px;border:1px solid rgba(255,255,255,0.04);border-radius:8px" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>
+          <div style="margin-top:10px"><a class="btn" href="https://www.lahmacunexpress.de" target="_blank" rel="noopener noreferrer" style="background:#ff6600;color:#fff">Zur Originalseite</a></div>
         </div>
       </div>
-      <div class="card" style="text-align:center;">
-        <h3>LC Express</h3>
-        <iframe src="https://www.lahmacunexpress.de" title="Lahmacun Express" 
-                style="width:100%; height:200px; border:1px solid #444; border-radius:8px;">
-        </iframe>
-        <div style="margin-top:10px;">
-          <a href="https://www.lahmacunexpress.de" target="_blank" class="btn" style="background:#ff6600; color:#ffffff;">Zur Originalseite</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Veyfkon – IT-Security </p>
-    <a href="datenschutz.html">Datenschutz</a> |
-    <a href="impressum.html">Impressum</a>
+    <p>&copy; 2025 Veyfkon – IT‑Security</p>
+    <p><a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
   </footer>
+
+  <script>
+    // Simple form UX: disable button while submitting and show status
+    (function(){
+      const form = document.getElementById('contact-form');
+      const btn = document.getElementById('submit-btn');
+      const status = document.getElementById('form-status');
+      form.addEventListener('submit', function(e){
+        // Basic HTML5 validation - let browser handle
+        if(!form.checkValidity()) return;
+        btn.disabled = true; btn.textContent = 'Sende…'; status.style.display = 'block';
+      });
+    })();
+  </script>
 </body>
 </html>
