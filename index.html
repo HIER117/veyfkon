@@ -109,125 +109,12 @@
   width: 100%;
   height: auto;
 }
-.site-header {
-    background: linear-gradient(90deg, #0e1320, #151c2f);
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
 
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #00ffff;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  .main-nav {
-    display: flex;
-    gap: 25px;
-  }
-
-  .main-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    position: relative;
-    transition: color 0.3s ease;
-  }
-
-  .main-nav a::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: #00ffff;
-    transition: width 0.3s ease;
-  }
-
-  .main-nav a:hover {
-    color: #00ffff;
-  }
-
-  .main-nav a:hover::after {
-    width: 100%;
-  }
-
-  /* Burger Button Style */
-  .burger {
-    display: none;
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-
-  /* Mobile Style */
-  @media (max-width: 768px) {
-    .burger {
-      display: block;
-    }
-
-    .main-nav {
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      background: rgba(14, 19, 32, 0.95);
-      flex-direction: column;
-      gap: 15px;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      display: none;
-    }
-
-    .main-nav.open {
-      display: flex;
-      animation: fadeInMenu 0.3s ease forwards;
-    }
-
-    @keyframes fadeInMenu {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  }
-</style>
-
-<script>
-  const burger = document.querySelector('.burger');
-  const nav = document.querySelector('.main-nav');
-
-  burger.addEventListener('click', () => {
-    nav.classList.toggle('open');
-  });
-</script>
 </style>
 
 <header class="site-header">
   <div class="container">
     <h1 class="logo">Veyfkon</h1>
-
-    <!-- Burger Button -->
-    <button class="burger" aria-label="Menü öffnen">
-      ☰
-    </button>
-
-    <!-- Navigation -->
     <nav aria-label="Hauptnavigation" class="main-nav">
       <a href="#services">Leistungen</a>
       <a href="#kontakt">Kontakt</a>
