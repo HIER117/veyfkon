@@ -101,18 +101,6 @@
     box-shadow: 0 8px 28px rgba(0, 255, 255, 0.25);
     filter: brightness(1.03);
   }
-     .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1.2s ease forwards;
-  }
-
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 </style>
 
 <header class="site-header">
@@ -141,11 +129,11 @@
 <section aria-hidden="false" class="image-section">
   <div class="image-wrapper">
     <img 
-  src="images/Screenshot 2025-08-11 110149.png" 
-  alt="Illustration: Cybersecurity" 
-  class="smooth-image fade-in"
-/>
-
+      loading="lazy" 
+      src="images/Screenshot 2025-08-11 110149.png" 
+      alt="Illustration: Cybersecurity" 
+      class="smooth-image"
+    >
   </div>
 </section>
 
