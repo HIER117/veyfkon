@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -72,10 +73,25 @@
     70% { box-shadow: 0 0 0 10px rgba(0,212,255, 0); }
     100% { box-shadow: 0 0 0 0 rgba(0,212,255, 0); }
   }
+ .image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background: #0e1320; /* optional: dunkler Hintergrund */
+  }
+
+  .image-wrapper {
+    max-width: 900px; /* begrenzt die Breite auf großen Monitoren */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .smooth-image {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
     border-radius: 12px;
-    display: inline-block;
     transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   }
@@ -110,13 +126,15 @@
     </div>
   </section>
 
-<section aria-hidden="false" style="text-align:center; padding: 40px 0;">
-  <img 
-    loading="lazy" 
-    src="images/Screenshot 2025-08-11 110149.png" 
-    alt="Illustration: Cybersecurity" 
-    class="smooth-image"
-  >
+<section aria-hidden="false" class="image-section">
+  <div class="image-wrapper">
+    <img 
+      loading="lazy" 
+      src="images/Screenshot 2025-08-11 110149.png" 
+      alt="Illustration: Cybersecurity" 
+      class="smooth-image"
+    >
+  </div>
 </section>
 
     <section id="services" aria-labelledby="services-title">
