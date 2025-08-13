@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -75,14 +76,14 @@
     justify-content: center;
     align-items: center;
     padding: 50px 20px;
-    background: #0e1320; /* optional: dunkler Hintergrund */
+    background: #0e1320;
   }
     .image-section {
-  background: transparent; /* Hintergrund entfernen */
+  background: transparent;
 }
 
   .image-wrapper {
-    max-width: 900px; /* begrenzt die Breite auf großen Monitoren */
+    max-width: 900px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -109,12 +110,82 @@
   width: 100%;
   height: auto;
 }
+.main-nav a:hover::after {
+    width: 100%;
+  }
+.main-nav a:hover {
+    color: #00ffff;
+  }
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #00ffff;
+    transition: width 0.3s ease;
+  }
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+.no-scroll {
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .main-nav {
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    max-width: 320px;
+    background: linear-gradient(135deg, rgba(20, 28, 48, 0.98), rgba(35, 45, 80, 0.98));
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 2000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px);
+    animation: fadeInMenu 0.3s ease forwards;
+  }
+  .main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  .main-nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+  }
+  .main-nav.open {
+    display: flex;
+  }
+  .burger {
+    display: block;
+  }
+}
+```
 
 </style>
 
-<header class="site-header">
-  <div class="container">
-    <h1 class="logo">Veyfkon</h1>
+<header <button class="burger" aria-label="Menü öffnen">
+      ☰VEYFKON
+    </button>
+
+    <!-- Navigation -->
     <nav aria-label="Hauptnavigation" class="main-nav">
       <a href="#services">Leistungen</a>
       <a href="#kontakt">Kontakt</a>
@@ -123,6 +194,7 @@
     </nav>
   </div>
 </header>
+
 
 <main>
   <section id="hero" class="hero" aria-labelledby="hero-title">
@@ -193,10 +265,17 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Veyfkon – IT‑Security</p>
+    <p>&copy; 2025 VEYFKON </p>
     <p><a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
   </footer>
+<script>
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.main-nav');
 
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+</script>
   <script>
     // Simple form UX: disable button while submitting and show status
     (function(){
