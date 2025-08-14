@@ -27,7 +27,6 @@
   main{max-width:var(--maxw);margin:0 auto;padding:40px}
   section{padding:56px 0}
 
-  /* Hero */
   #hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:88px 24px;border-radius:var(--radius);position:relative;overflow:hidden}
   #hero .panel{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:48px;border-radius:var(--radius);width:100%}
   #hero h2{font-size:clamp(28px,4.2vw,48px);margin-bottom:14px;color:var(--accent)}
@@ -35,87 +34,64 @@
   .btn{display:inline-block;margin-top:22px;padding:12px 20px;border-radius:10px;background:var(--accent);color:var(--accent-contrast);font-weight:700;text-decoration:none;animation:pulse 2s infinite}
   .btn:focus{outline:3px solid rgba(0,212,255,0.15)}
 
-  /* Services */
   .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
   .card{background:var(--panel);padding:22px;border-radius:12px;transition:transform .25s,box-shadow .25s}
   .card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,.6)}
   .card h3{margin-bottom:8px}
   .muted{color:var(--muted)}
 
-  /* Kontakt */
   #kontakt{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:48px;border-radius:var(--radius);box-shadow:0 6px 30px rgba(0,0,0,.6)}
   form{max-width:760px;margin:0 auto;text-align:left}
   label{display:block;margin-bottom:14px;font-weight:600}
   input[type="email"],textarea,input[type="text"]{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:var(--card);color:inherit;font-size:16px}
   input:focus,textarea:focus{outline:2px solid var(--accent)}
   .form-row{display:grid;grid-template-columns:1fr;gap:12px}
-
   footer{padding:28px 0;text-align:center;color:#aaa;font-size:14px}
   footer a{color:var(--accent);text-decoration:none}
-
-  /* Accessibility */
   a:focus{outline:3px solid rgba(0,212,255,0.12);outline-offset:2px}
-
-  /* Responsive tweaks */
   @media(min-width:900px){main{padding:60px}header h1{font-size:22px}header{padding:20px 48px}}
-
-  /* Animationen */
   @keyframes slide-down {
     from { transform: translateY(-100%); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
-  }
-
   .fade-in {opacity: 0;animation: fade-in 1.2s ease forwards;animation-delay: 0.5s;}
   @keyframes fade-in {to { opacity: 1; }}
-
   @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(0,212,255, 0.7); }
     70% { box-shadow: 0 0 0 10px rgba(0,212,255, 0); }
     100% { box-shadow: 0 0 0 0 rgba(0,212,255, 0); }
-  }
- .image-section {
+  .image-section {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 50px 20px;
     background: #0e1320;
-  }
-    .image-section {
+  .image-section {
   background: transparent;
-}
-
-  .image-wrapper {
+.image-wrapper {
     max-width: 900px;
     width: 100%;
     display: flex;
     justify-content: center;
-  }
-
   .smooth-image {
     width: 100%;
     height: auto;
     border-radius: 12px;
     transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  }
-
   .smooth-image:hover {
     transform: scale(1.02);
     box-shadow: 0 8px 28px rgba(0, 255, 255, 0.25);
     filter: brightness(1.03);
-  }
-    .image-wrapper {
+  .image-wrapper {
   max-width: none;
-  width: 100%;
-}
+  width: 100%;}
 .smooth-image {
   width: 100%;
-  height: auto;
-}
+  height: auto;}
 .main-nav a:hover::after {
     width: 100%;
   }
-.main-nav a:hover {
+    .main-nav a:hover {
     color: #00ffff;
   }
 .main-nav a::after {
@@ -178,16 +154,11 @@
   .burger {
     display: block;
   }
-}
-```
-
+  
 </style>
-
 <header <button class="burger" aria-label="Menü öffnen">
       ☰VEYFKON
     </button>
-
-    <!-- Navigation -->
     <nav aria-label="Hauptnavigation" class="main-nav">
       <a href="#services">Leistungen</a>
       <a href="#kontakt">Kontakt</a>
@@ -196,8 +167,6 @@
     </nav>
   </div>
 </header>
-
-
 <main>
   <section id="hero" class="hero" aria-labelledby="hero-title">
     <div class="container">
@@ -208,15 +177,13 @@
       </div>
     </div>
   </section>
-
 <section aria-hidden="false" class="image-section">
   <div class="image-wrapper">
     <img 
       loading="lazy" 
       src="images/Screenshot 2025-08-11 110149.png" 
       alt="Illustration: Cybersecurity" 
-      class="smooth-image"
-    >
+      class="smooth-image">
   </div>
 </section>
 
@@ -243,7 +210,6 @@
       <p class="muted">Sie haben Fragen oder möchten sich beraten lassen? Schreiben Sie uns oder rufen Sie an.</p>
 
       <form id="contact-form" action="https://formspree.io/f/xnnzgvng" method="POST" novalidate>
-        <!-- Formspree: optional subject and honeypot -->
         <input type="hidden" name="_subject" value="Neue Anfrage von Veyfkon-Website">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
@@ -279,13 +245,11 @@
   });
 </script>
   <script>
-    // Simple form UX: disable button while submitting and show status
     (function(){
       const form = document.getElementById('contact-form');
       const btn = document.getElementById('submit-btn');
       const status = document.getElementById('form-status');
       form.addEventListener('submit', function(e){
-        // Basic HTML5 validation - let browser handle
         if(!form.checkValidity()) return;
         btn.disabled = true; btn.textContent = 'Sende…'; status.style.display = 'block';
       });
