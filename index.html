@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -8,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Veyfkon – Ihr Partner für IT-Sicherheit & digitale Schutzmaßnahmen">
   <meta name="theme-color" content="#0e0e0e">
-  <title>Veyfkon – IT‑Security</title>
+  <title>Veyfkon – IT-Security</title>
   <style>
   :root{
     --bg:#0e0e0e; --panel:#1c1c1c; --muted:#ccc; --accent:#00d4ff; --accent-contrast:#000; --card:#2a2a2a;
@@ -32,7 +29,8 @@
   #hero .panel{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:48px;border-radius:var(--radius);width:100%}
   #hero h2{font-size:clamp(28px,4.2vw,48px);margin-bottom:14px;color:var(--accent)}
   #hero p{color:var(--muted);max-width:900px}
-  .btn{display:inline-block;margin-top:22px;padding:12px 20px;border-radius:10px;background:var(--accent);color:var(--accent-contrast);font-weight:700;text-decoration:none;animation:pulse 2s infinite}
+  .btn{display:inline-block;margin-top:22px;padding:12px 20px;border-radius:10px;background:var(--accent);color:var(--accent-contrast);font-weight:700;text-decoration:none;animation:pulse 2s infinite;transition:background-color 0.3s ease, transform 0.2s ease}
+  .btn:hover{background-color:#00aabb;transform:translateY(-2px)}
   .btn:focus{outline:3px solid rgba(0,212,255,0.15)}
 
   /* Services */
@@ -73,130 +71,18 @@
     70% { box-shadow: 0 0 0 10px rgba(0,212,255, 0); }
     100% { box-shadow: 0 0 0 0 rgba(0,212,255, 0); }
   }
- .image-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 20px;
-    background: #0e1320;
-  }
-    .image-section {
-  background: transparent;
-}
-
-  .image-wrapper {
-    max-width: 900px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .smooth-image {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  }
-
-  .smooth-image:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 28px rgba(0, 255, 255, 0.25);
-    filter: brightness(1.03);
-  }
-    .image-wrapper {
-  max-width: none;
-  width: 100%;
-}
-.smooth-image {
-  width: 100%;
-  height: auto;
-}
-.main-nav a:hover::after {
-    width: 100%;
-  }
-.main-nav a:hover {
-    color: #00ffff;
-  }
-.main-nav a::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: #00ffff;
-    transition: width 0.3s ease;
-  }
-.main-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    position: relative;
-    transition: color 0.3s ease;
-  }
-.no-scroll {
-  overflow: hidden;
-}
-@media (max-width: 768px) {
-  .main-nav {
-    position: fixed;
-    top: 60px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 100%;
-    max-width: 320px;
-    background: linear-gradient(135deg, rgba(20, 28, 48, 0.98), rgba(35, 45, 80, 0.98));
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 25px 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-    display: none;
-    z-index: 2000;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(6px);
-    animation: fadeInMenu 0.3s ease forwards;
-  }
-  .main-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 6px;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-  .main-nav a:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.05);
-  }
-  .main-nav.open {
-    display: flex;
-  }
-  .burger {
-    display: block;
-  }
-}
-```
-
-</style>
-
-<header <button class="burger" aria-label="Menü öffnen">
-      ☰VEYFKON
-    </button>
-
-    <!-- Navigation -->
-    <nav aria-label="Hauptnavigation" class="main-nav">
-      <a href="#services">Leistungen</a>
-      <a href="#kontakt">Kontakt</a>
-      <a href="ueber-uns.html">Über uns</a>
-      <a href="#referenzen">Part Projekte</a>
-    </nav>
-  </div>
+  </style>
+</head>
+<body>
+<header>
+  <button class="burger" aria-label="Menü öffnen">☰ VEYFKON</button>
+  <nav aria-label="Hauptnavigation" class="main-nav">
+    <a href="#services">Leistungen</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="#referenzen">Part Projekte</a>
+  </nav>
 </header>
-
 
 <main>
   <section id="hero" class="hero" aria-labelledby="hero-title">
@@ -209,87 +95,76 @@
     </div>
   </section>
 
-<section aria-hidden="false" class="image-section">
-  <div class="image-wrapper">
-    <img 
-      loading="lazy" 
-      src="images/Screenshot 2025-08-11 110149.png" 
-      alt="Illustration: Cybersecurity" 
-      class="smooth-image"
-    >
-  </div>
-</section>
+  <section aria-hidden="false" class="image-section">
+    <div class="image-wrapper">
+      <img loading="lazy" src="images/Screenshot 2025-08-11 110149.png" alt="Illustration: Cybersecurity" class="smooth-image">
+    </div>
+  </section>
 
-    <section id="services" aria-labelledby="services-title">
-      <h2 id="services-title">Leistungen Kompetenzen</h2>
-      <div class="services" style="margin-top:18px">
-        <article class="card" aria-labelledby="s1"><h3 id="s1">⚙️ IT‑Onsite‑Support</h3><p class="muted">Vor‑Ort‑Service Support.</p></article>
-        <article class="card" aria-labelledby="s2"><h3 id="s2">🌐 Remote Helpdesk</h3><p class="muted">Effiziente Fernwartung und Helpdesk Support</p></article>
-        <article class="card" aria-labelledby="s3"><h3 id="s3">🔗 Systemintegration Netzwerk</h3><p class="muted">Planung, Aufbau und Verwaltung von Netzwerken, Virtualisierung.</p></article>
-        <article class="card" aria-labelledby="s4"><h3 id="s4">💾 Softwaredeployment</h3><p class="muted">Automatisierte OS‑ und Anwendungsinstallationen.</p></article>
-        <article class="card" aria-labelledby="s5"><h3 id="s5">🖥️ Hardware‑Installation</h3><p class="muted">Einrichtung von Workstations, Laptops und Peripherie.</p></article>
-        <article class="card" aria-labelledby="s6"><h3 id="s6">🎓 IT‑Schulungen</h3><p class="muted">Praxiserprobte Trainings für Mitarbeitende.</p></article>
-        <article class="card" aria-labelledby="s7"><h3 id="s7">🛡️ IT‑Sicherheit & Backup</h3><p class="muted">Backup‑Strategien, Sicherheitschecks und Notfallplanung.</p></article>
-        <article class="card" aria-labelledby="s8"><h3 id="s8">🔧 Wartung & Beratung</h3><p class="muted">Regelmäßige Wartung, Performance‑Optimierung & Beratung.</p></article>
+  <section id="services" aria-labelledby="services-title">
+    <h2 id="services-title">Leistungen Kompetenzen</h2>
+    <div class="services" style="margin-top:18px">
+      <article class="card" aria-labelledby="s1"><h3 id="s1">⚙️ IT-Onsite-Support</h3><p class="muted">Vor-Ort-Service Support.</p></article>
+      <article class="card" aria-labelledby="s2"><h3 id="s2">🌐 Remote Helpdesk</h3><p class="muted">Effiziente Fernwartung und Helpdesk Support</p></article>
+      <article class="card" aria-labelledby="s3"><h3 id="s3">🔗 Systemintegration Netzwerk</h3><p class="muted">Planung, Aufbau und Verwaltung von Netzwerken, Virtualisierung.</p></article>
+      <article class="card" aria-labelledby="s4"><h3 id="s4">💾 Softwaredeployment</h3><p class="muted">Automatisierte OS- und Anwendungsinstallationen.</p></article>
+      <article class="card" aria-labelledby="s5"><h3 id="s5">🖥️ Hardware-Installation</h3><p class="muted">Einrichtung von Workstations, Laptops und Peripherie.</p></article>
+      <article class="card" aria-labelledby="s6"><h3 id="s6">🎓 IT-Schulungen</h3><p class="muted">Praxiserprobte Trainings für Mitarbeitende.</p></article>
+      <article class="card" aria-labelledby="s7"><h3 id="s7">🛡️ IT-Sicherheit & Backup</h3><p class="muted">Backup-Strategien, Sicherheitschecks und Notfallplanung.</p></article>
+      <article class="card" aria-labelledby="s8"><h3 id="s8">🔧 Wartung & Beratung</h3><p class="muted">Regelmäßige Wartung, Performance-Optimierung & Beratung.</p></article>
+      <article class="card" aria-labelledby="s9">
+        <h3 id="s9">📱 Refurbished Backup-Lösung</h3>
+        <p class="muted">2. iPhone SE als Notfallgerät – zuverlässig & einsatzbereit.</p>
+        <a href="refurbished-iphone.html" class="btn">Mehr erfahren</a>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:26px">
+      <a href="#kontakt" class="btn">Kostenloses Erstgespräch vereinbaren</a>
+    </div>
+  </section>
+
+  <section id="kontakt" aria-labelledby="kontakt-title">
+    <h2 id="kontakt-title">Kontakt</h2>
+    <p class="muted">Sie haben Fragen oder möchten sich beraten lassen? Schreiben Sie uns oder rufen Sie an.</p>
+    <form id="contact-form" action="https://formspree.io/f/xnnzgvng" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="Neue Anfrage von Veyfkon-Website">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="form-row">
+        <label for="email">Ihre E-Mail</label>
+        <input id="email" type="email" name="email" placeholder="Ihre E-Mail" required autocomplete="email">
+        <label for="message">Ihre Nachricht</label>
+        <textarea id="message" name="message" rows="6" placeholder="Ihre Nachricht" required></textarea>
       </div>
-
-      <div style="text-align:center;margin-top:26px">
-        <a href="#kontakt" class="btn">Kostenloses Erstgespräch vereinbaren</a>
+      <div style="text-align:center;margin-top:12px">
+        <button id="submit-btn" type="submit" class="btn">Absenden</button>
       </div>
-    </section>
+    </form>
+    <p id="form-status" style="text-align:center;margin-top:12px;color:#9bdcff;display:none">Danke — Ihre Nachricht wird gesendet…</p>
+  </section>
+</main>
 
-    <section id="kontakt" aria-labelledby="kontakt-title">
-      <h2 id="kontakt-title">Kontakt</h2>
-      <p class="muted">Sie haben Fragen oder möchten sich beraten lassen? Schreiben Sie uns oder rufen Sie an.</p>
+<footer>
+  <p>&copy; 2025 VEYFKON </p>
+  <p><a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
+</footer>
 
-      <form id="contact-form" action="https://formspree.io/f/xnnzgvng" method="POST" novalidate>
-        <!-- Formspree: optional subject and honeypot -->
-        <input type="hidden" name="_subject" value="Neue Anfrage von Veyfkon-Website">
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-        <div class="form-row">
-          <label for="email">Ihre E‑Mail</label>
-          <input id="email" type="email" name="email" placeholder="Ihre E‑Mail" required autocomplete="email">
-
-          <label for="message">Ihre Nachricht</label>
-          <textarea id="message" name="message" rows="6" placeholder="Ihre Nachricht" required></textarea>
-        </div>
-
-        <div style="text-align:center;margin-top:12px">
-          <button id="submit-btn" type="submit" class="btn">Absenden</button>
-        </div>
-      </form>
-
-      <p id="form-status" style="text-align:center;margin-top:12px;color:#9bdcff;display:none">Danke — Ihre Nachricht wird gesendet…</p>
-    </section>
-
-
-  </main>
-
-  <footer>
-    <p>&copy; 2025 VEYFKON </p>
-    <p><a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
-  </footer>
 <script>
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.main-nav');
-
   burger.addEventListener('click', () => {
     nav.classList.toggle('open');
   });
 </script>
-  <script>
-    // Simple form UX: disable button while submitting and show status
-    (function(){
-      const form = document.getElementById('contact-form');
-      const btn = document.getElementById('submit-btn');
-      const status = document.getElementById('form-status');
-      form.addEventListener('submit', function(e){
-        // Basic HTML5 validation - let browser handle
-        if(!form.checkValidity()) return;
-        btn.disabled = true; btn.textContent = 'Sende…'; status.style.display = 'block';
-      });
-    })();
-  </script>
+<script>
+  (function(){
+    const form = document.getElementById('contact-form');
+    const btn = document.getElementById('submit-btn');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', function(e){
+      if(!form.checkValidity()) return;
+      btn.disabled = true; btn.textContent = 'Sende…'; status.style.display = 'block';
+    });
+  })();
+</script>
 </body>
 </html>
