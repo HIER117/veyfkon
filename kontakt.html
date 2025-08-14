@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kontakt – Veyfkon IT-Sicherheit">
+  <meta name="theme-color" content="#0e0e0e">
+  <title>Kontakt – Veyfkon</title>
+  <style>
+    :root{
+      --bg:#0e0e0e; --panel:#1c1c1c; --muted:#ccc; --accent:#00d4ff; --accent-contrast:#000; --card:#2a2a2a;
+      --radius:16px; --maxw:800px;
+    }
+    body{margin:0;font-family:'Roboto',sans-serif;background:var(--bg);color:#f0f0f0;line-height:1.7;padding:20px}
+    header{text-align:center;margin-bottom:40px}
+    header h1{color:var(--accent);margin-bottom:10px;font-size:2em}
+    .back-link{display:inline-block;margin-bottom:20px;color:var(--accent);text-decoration:none;font-weight:600}
+    .back-link:hover{text-decoration:underline}
+    form{background:var(--panel);padding:30px;border-radius:var(--radius);box-shadow:0 8px 25px rgba(0,0,0,0.6);max-width:var(--maxw);margin:auto}
+    label{display:block;margin-top:15px;font-weight:600}
+    input,textarea{width:100%;padding:10px;margin-top:5px;border:none;border-radius:8px;background:var(--card);color:#fff;font-size:1em}
+    input:focus,textarea:focus{outline:2px solid var(--accent)}
+    textarea{min-height:120px;resize:vertical}
+    button{margin-top:20px;padding:12px 24px;border-radius:10px;background:var(--accent);color:var(--accent-contrast);font-weight:700;border:none;font-size:1em;cursor:pointer;transition:background-color 0.3s ease, transform 0.2s ease}
+    button:hover{background-color:#00aabb;transform:translateY(-2px)}
+    @media(max-width:600px){
+      body{padding:15px}
+      header h1{font-size:1.6em}
+      form{padding:20px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+    <h1>Kontakt</h1>
+    <p>Schreiben Sie uns Ihre Anfrage – wir melden uns schnellstmöglich.</p>
+  </header>
+
+  <form action="https://formspree.io/f/DEIN-FORMSPREE-ID" method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">E-Mail</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Nachricht</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Nachricht senden</button>
+  </form>
+</body>
+</html>
