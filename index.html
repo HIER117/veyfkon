@@ -1,426 +1,163 @@
 <!doctype html>
 <html lang="de">
 <head>
-  
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BD3QXS9D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-54BD3QXS9D');
-</script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dein Handwerks- & IT-Service</title>
-  <meta name="description" content="Sichere & verlässliche Anfragen: Leistungen auswählen, Details ergänzen, Kontakt — zuverlässig einsetzbar für echte Kunden." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Mobile Batterie-Tankstelle | Veyfkon</title>
+  <meta name="description" content="Mobile Batterie-Tankstelle: Abholung leerer Batterien, effizientes Laden im Container, Rücklieferung & Notfall-EV-Lade-Service in München." />
   <style>
-    :root{--bg:#f6f8fb;--card:#ffffff;--muted:#6b7280;--accent1:#06b6d4;--accent2:#3b82f6;--radius:12px;--max:820px}
+    :root{--accent:#0f766e;--accent-2:#06b6d4;--bg:#0f172a;--muted:#94a3b8}
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Arial;min-height:100vh;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:24px}
-    .container{width:100%;max-width:var(--max)}
-
-    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 8px 30px rgba(11,20,32,0.06)}
-    header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-    .logo{width:80px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
-    header h1{margin:0;font-size:18px}
-    header p{margin:4px 0 0 0;color:var(--muted);font-size:13px}
-
-    .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:12px}
-    .chip{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;border-radius:10px;border:1px solid #e8eef7;background:white;cursor:pointer;min-height:72px;transition:transform .12s,box-shadow .12s}
-    .chip:focus{outline:3px solid rgba(59,130,246,0.12)}
-    .chip.active{border-color:var(--accent2);background:linear-gradient(180deg,rgba(59,130,246,0.06),rgba(99,102,241,0.02));box-shadow:0 8px 20px rgba(59,130,246,0.08);transform:translateY(-4px)}
-    .chip .icon{font-size:20px}
-    .chip .title{font-weight:700;margin-top:6px;font-size:13px}
-    .chip .meta{font-size:12px;color:var(--muted);margin-top:4px;text-align:center}
-
-    .section{margin-top:14px}
-    label{display:block;font-weight:600;margin:10px 0 6px 0;font-size:13px}
-    input,textarea,select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #e8eef7;font-size:14px}
-    textarea{min-height:96px;resize:vertical}
-
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    @media(max-width:520px){.row{grid-template-columns:1fr}}
-
-    .actions{display:flex;gap:8px;justify-content:space-between;margin-top:12px}
-    .btn{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
-    .btn.ghost{background:transparent;border:1px solid rgba(59,130,246,0.12);color:var(--accent2)}
-
-    .summary{background:#fbfdff;border-radius:10px;padding:10px;border:1px solid #e6f0fb;font-size:13px;color:#0b1220;white-space:pre-line}
-    .muted{color:var(--muted);font-size:13px}
-
-    .footer{margin-top:12px;text-align:center;font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center;justify-content:center}
-
-    /* extras */
-    .extras{display:flex;flex-wrap:wrap;gap:8px}
-    .extra-item{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #e8eef7;padding:8px 10px;border-radius:10px}
-    .extra-item input{width:auto;margin:0}
-    .extra-other{margin-top:8px}
-
-    /* progress */
-    .progress{height:8px;background:#eef4fb;border-radius:8px;overflow:hidden;margin-top:12px}
-    .progress > div{height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));width:0%;transition:width .24s}
-
-    /* toast */
-    .toast{position:fixed;right:20px;bottom:20px;background:#0b1220;color:white;padding:12px 16px;border-radius:10px;box-shadow:0 12px 40px rgba(2,6,23,0.4);display:none}
-
-    /* footer link styles */
-    .footer a{ color:var(--accent2); text-decoration:none; font-weight:600 }
-    .footer a:hover{ text-decoration:underline }
-
-    /* Modal */
-    .modal-overlay{
-      position:fixed;
-      inset:0;
-      background:rgba(11,18,32,0.55);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      z-index:1000;
-      padding:20px;
-    }
-    .modal{background:white;max-width:720px;width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.3);animation:fadeUp .22s ease-out;max-height:80vh;overflow:hidden;display:flex;flex-direction:column}
-    .modal-header{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #e8eef7}
-    .modal-header h2{ margin:0; font-size:16px }
-    .modal-close{border:0;background:none;font-size:22px;cursor:pointer;padding:6px 10px;border-radius:8px}
-    .modal-close:focus{ outline:3px solid rgba(59,130,246,0.14) }
-    .modal-content{padding:16px;font-size:14px;color:#0b1220;overflow:auto}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:0;color:#0b1220;background:#f8fafc}
+    header{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:36px 20px}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    h1{margin:0 0 8px;font-size:28px}
+    p.lead{margin:0;color:rgba(255,255,255,0.95)}
+    nav{display:flex;gap:12px;align-items:center;margin-top:16px}
+    a.btn{background:white;color:var(--accent);padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+    main{padding:36px 20px}
+    .grid{display:grid;grid-template-columns:1fr;gap:20px}
+    @media(min-width:900px){.grid{grid-template-columns:1fr 420px}}
+    .card{background:white;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(11,18,32,0.06)}
+    .features{display:grid;grid-template-columns:1fr;gap:12px}
+    @media(min-width:700px){.features{grid-template-columns:repeat(2,1fr)}}
+    label{display:block;font-size:14px;margin-bottom:6px;color:#0b1220}
+    input,textarea,select{width:100%;padding:10px;border:1px solid #e6eef6;border-radius:8px;font-size:14px}
+    button.primary{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;border:0;font-weight:700}
+    footer{padding:28px 20px;background:#0b1220;color:#cbd5e1}
+    .muted{color:var(--muted);font-size:14px}
+    .small{font-size:13px}
+    .pill{display:inline-block;background:#eef2ff;color:#334155;padding:6px 8px;border-radius:999px;font-weight:600}
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="card" role="main">
-      <header>
-        <div class="logo">veyfkon</div>
+  <header>
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
         <div>
-          <h1>Service- & Projektanfrage</h1>
-          <p>Sicher und robust - Dein Handwerks- & IT-Service. Zuverlässige Hilfe für Wohnung, Haus und Büro.
-Elektriker, Kleinreparaturen, PC- & WLAN-Einrichtung.</p>
+          <h1>Mobile Batterie‑Tankstelle — Veyfkon</h1>
+          <p class="lead">Wir holen leere Batterien ab, liefern sie vollgeladen zurück und bieten Notfall-Ladungen für liegengebliebene E-Autos direkt vor Ort.</p>
         </div>
-      </header>
-
-      <!-- Progress -->
-      <div class="progress" aria-hidden="true"><div id="progBar"></div></div>
-
-      <!-- Services -->
-      <div class="section" aria-labelledby="servicesLabel">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <div id="servicesLabel" class="muted">1) Leistungen (mehrere wählen möglich)</div>
-          <div style="display:flex;gap:8px;align-items:center">
-            <button id="clearBtn" class="btn ghost" style="padding:6px 10px;font-size:13px">Alles löschen</button>
-
-          </div>
-        </div>
-
-        <div class="service-grid" id="serviceGrid"></div>
-      </div>
-
-      <!-- Details -->
-      <div class="section">
-        <div class="muted">2) Auftrag – kurz & knapp</div>
-        <label for="object">Objekt / Raum</label>
-        <input id="object" placeholder="z. B. Wohnzimmer, Bad, Büro">
-
-        <div class="row">
-          <div>
-            <label for="size">Ca. Größe</label>
-            <input id="size" placeholder="z. B. 20 m²">
-          </div>
-          <div>
-            <label for="time">Wunschzeitraum</label>
-            <input id="time" placeholder="z. B. nächste 2 Wochen">
-          </div>
-        </div>
-
-        <label for="notes">Kurzbeschreibung / Hinweise</label>
-        <textarea id="notes" placeholder="z. B. Materialien, Stockwerk, Besonderheiten"></textarea>
-
-        <!-- Neues Feld: Sonstiges -->
-        <label for="extra">Sonstiges / Weitere Wünsche</label>
-        <div class="extras" role="group" aria-label="Häufige Zusatzwünsche">
-          <label class="extra-item"><input type="checkbox" id="extra_windows"> Fenster</label>
-          <label class="extra-item"><input type="checkbox" id="extra_keller"> Keller entrümpeln</label>
-          <label class="extra-item"><input type="checkbox" id="extra_mobel"> Möbel abbauen/aufbauen</label>
-          <label class="extra-item"><input type="checkbox" id="extra_heizung"> Heizkörper reinigen</label>
-          <label class="extra-item"><input type="checkbox" id="extra_sonder"> Sonstiges</label>
-        </div>
-        <textarea id="extra_other" class="extra-other" placeholder='Falls "Sonstiges": bitte hier kurz beschreiben (z. B. Balkon, Kamin, spezielles Material)'></textarea>
-      </div>
-
-      <!-- Contact -->
-      <div class="section">
-        <div class="muted">3) Kontakt</div>
-        <label for="name">Name *</label>
-        <input id="name" placeholder="Dein Name" required>
-
-        <div class="row">
-          <div>
-            <label for="phone">Telefon</label>
-            <input id="phone" placeholder="z. B. +49 170 1234567">
-          </div>
-          <div>
-            <label for="email">E-Mail *</label>
-            <input id="email" type="email" placeholder="mail@beispiel.de" required>
-          </div>
-        </div>
-
-        <!-- honeypot for bots -->
-        <input id="hp" name="hp" type="text" style="position:absolute;left:-9999px;top:auto;" aria-hidden="true" tabindex="-1">
-
-        <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
-          <button id="sendBtn" class="btn">Anfrage senden</button>
-          <div id="status" style="font-size:13px;color:var(--muted)"></div>
-        </div>
-
-        <div style="margin-top:12px">
-          <div class="muted">Vorschau</div>
-          <div class="summary" id="summary">(noch keine Auswahl)</div>
-        </div>
-      </div>
-
-      <div class="footer">
-        <span>© 2025 Dein Handwerks- & IT-Service</span>
-        <span>·</span>
-        <a href="#" id="openImprint">Impressum</a>
-        <span>·</span>
-        <a href="#" id="openPrivacy">Datenschutz</a>
+        <nav>
+          <a class="btn" href="#pilot">Pilot anfragen</a>
+          <a class="btn" href="#kontakt">Kontakt</a>
+        </nav>
       </div>
     </div>
-  </div>
+  </header>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <main class="container">
+    <div class="grid">
+      <section>
+        <div class="card">
+          <h2>Was wir anbieten</h2>
+          <div class="features" style="margin-top:12px">
+            <div>
+              <h3>📦 Container‑Ladestation</h3>
+              <p class="small muted">Mobiler Container mit Ladeeinheiten für USV, Industrieakkus und EVs. Sicher, überwacht und skalierbar.</p>
+            </div>
+            <div>
+              <h3>🚚 Abholung & Lieferung</h3>
+              <p class="small muted">Wir holen leere Batterien ab, laden sie effizient und liefern sie vollgeladen zurück. Auch liegengebliebene E-Autos werden direkt vor Ort geladen.</p>
+            </div>
+            <div>
+              <h3>⚡ Notfall‑EV‑Ladung</h3>
+              <p class="small muted">Mobile Schnelllade-Einheit für E-Fahrzeuge, die liegengeblieben sind oder kurzfristig Energie benötigen.</p>
+            </div>
+            <div>
+              <h3>🧪 Tests & Second‑Life</h3>
+              <p class="small muted">Batterieprüfung, Dokumentation und Aufbereitung für Second-Life-Einsätze – wirtschaftlich & nachhaltig.</p>
+            </div>
+          </div>
+        </div>
 
-  <!-- Modal Overlay -->
-  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="modal-header">
-        <h2 id="modalTitle"></h2>
-        <button class="modal-close" id="closeModal" aria-label="Schließen">×</button>
-      </div>
-      <div class="modal-content" id="modalContent"></div>
+        <div class="card" style="margin-top:16px">
+          <h2>Warum das jetzt Sinn macht</h2>
+          <ul>
+            <li class="small muted">Viele KMUs und Werkstätten haben keine eigene Ladeinfrastruktur.</li>
+            <li class="small muted">Container‑Ansatz ist kosteneffizient, mobil und skalierbar.</li>
+            <li class="small muted">Mit einem Reisegewerbeschein kannst du schnell testen und starten.</li>
+          </ul>
+        </div>
+
+        <div class="card" id="pilot" style="margin-top:16px">
+          <h2>Pilotanfrage</h2>
+          <p class="small muted">Trage deine Firma oder deinen Bedarf ein — wir melden uns mit einem Pilotangebot für München.</p>
+          <form id="pilotForm" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="return validatePilot()">
+            <label for="name">Name / Firma *</label>
+            <input id="name" name="name" type="text" required />
+
+            <label for="email">E‑Mail *</label>
+            <input id="email" name="email" type="email" value="seyfi.volkan@outlook.com" required />
+
+            <label for="type">Was möchten Sie testen?</label>
+            <select id="type" name="type">
+              <option>USV‑Akkus</option>
+              <option>Industriebatterien</option>
+              <option>EV‑Notladung</option>
+              <option>Second‑Life</option>
+            </select>
+
+            <label for="message">Kurzbeschreibung (Anzahl, Standort, Zeitrahmen)</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+
+            <input type="hidden" name="_subject" value="Pilotanfrage: Mobile Batterie‑Tankstelle" />
+            <button class="primary" type="submit">Pilot anfragen</button>
+          </form>
+          <p class="muted small" style="margin-top:10px">Hinweis: Ersetze die Formspree‑URL mit deiner eigenen Formspree‑ID.</p>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>Interessierte Partner</h3>
+          <p class="small muted">Wir freuen uns über Gespräche mit Personen und Unternehmen, die unsere Vision teilen und sich für innovative Energie- und Mobilitätslösungen begeistern. Wenn Sie neugierig sind, melden Sie sich gerne.</p>
+          <div style="display:flex;gap:8px;margin-top:12px">
+            <a class="pill" href="#kontakt">Kontakt aufnehmen</a>
+            <a class="pill" href="#pilot">Pilotanfrage</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3>So funktioniert's (Kurz)</h3>
+          <ol class="small muted">
+            <li>Du buchst Abholung oder bringst Batterien / Fahrzeuge zum Container.</li>
+            <li>Wir prüfen & laden – dokumentieren Kapazität & Sicherheit.</li>
+            <li>Ausgelieferte Batterien und Fahrzeuge sind wieder einsatzbereit; auf Wunsch Second‑Life‑Optionen.</li>
+          </ol>
+        </div>
+
+        <div class="card" style="margin-top:16px" id="kontakt">
+          <h3>Kontakt</h3>
+          <p class="small muted">Interessiert? Ruf uns an oder schreib uns — wir melden uns innerhalb von 2 Werktagen.</p>
+          <p class="small"><strong>Veyfkon / Seyfi Volkan</strong><br/>München · Reisegewerbe</p>
+          <p class="small">E‑Mail: <a href="mailto:seyfi.volkan@outlook.com">seyfi.volkan@outlook.com</a><br/>Tel: +49 163 2229705</p>
+        </div>
+      </aside>
     </div>
-  </div>
+
+    <div style="margin-top:20px;text-align:center">
+      <p class="muted small">Diese Seite ist vorbereitet, um Interessenten und mögliche Partner dezent über das Projekt zu informieren.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+      <div>
+        <strong>Veyfkon</strong> — Mobile Batterie‑Tankstelle • München
+        <div class="muted small">Impressum / Datenschutz bei Veröffentlichung ergänzen</div>
+      </div>
+      <div class="muted small">© "Veyfkon" 2025</div>
+    </div>
+  </footer>
 
   <script>
-    /***** KONFIGURATION ******/
-    // Option A: klassische Mailto-Fallback (funktioniert überall, öffnet Mailprogramm)
-    const RECEIVER = 'seyfi.volkan@outlook.com'; // <-- trage hier deine Adresse ein
-    // Option B: Formspree oder eigener Endpoint (empfohlen für echte Kunden)
-    // Trage hier die vollständige URL ein (z. B. https://formspree.io/f/xxxxx)
-    const FORMSPREE_ENDPOINT = ''; // <-- wenn gesetzt, benutzt die Seite fetch POST
-
-    const SUBJECT = 'Website-Anfrage';
-
-    /***** Services (konfiguration) *****/
-    const SERVICES = [
-      {id:'Maler & Lackierer', icon:'🎨'},
-      {id:'Boden & Parkett', icon:'🧱'},
-      {id:'Elektriker', icon:'💡'},
-      {id:'Sanitär & Heizung', icon:'🚿'},
-      {id:'Fliesenleger', icon:'🧩'},
-      {id:'Kleinreparaturen', icon:'🔧'},
-      {id:'Smart Home Einrichtung', icon:'🏠'},
-      {id:'Handy & Tablet Einrichtung', icon:'📱'},
-      {id:'IT & Netzwerk Einrichtung', icon:'🖥️'},
-      {id:'Datenschutz & Sicherheit', icon:'🔒'}
-    ];
-
-    // render grid
-    const grid = document.getElementById('serviceGrid');
-    SERVICES.forEach(s=>{
-      const b = document.createElement('button');
-      b.className='chip'; b.type='button'; b.dataset.service = s.id;
-      b.innerHTML = `<div class='icon' aria-hidden='true'>${s.icon}</div><div class='title'>${s.id}</div><div class='meta'>${s.id.split(' ')[0]}</div>`;
-      b.addEventListener('click', ()=> toggle(b));
-      b.addEventListener('keydown', e=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); toggle(b); } });
-      grid.appendChild(b);
-    });
-
-    const selected = new Set();
-    function toggle(btn){
-      const s = btn.dataset.service;
-      if(selected.has(s)){ selected.delete(s); btn.classList.remove('active'); }
-      else{ selected.add(s); btn.classList.add('active'); }
-      updateSummary(); updateProgress();
-    }
-
-    document.getElementById('clearBtn').addEventListener('click', ()=>{ selected.clear(); document.querySelectorAll('.chip.active').forEach(n=>n.classList.remove('active')); clearExtras(); updateSummary(); updateProgress(); });
-
-    // build message text
-    function buildMessage(){
-      const services = Array.from(selected).join(', ') || '-';
-      const object = document.getElementById('object').value.trim() || '-';
-      const size = document.getElementById('size').value.trim() || '-';
-      const time = document.getElementById('time').value.trim() || '-';
-      const notes = document.getElementById('notes').value.trim() || '-';
-      const name = document.getElementById('name').value.trim() || '-';
-      const phone = document.getElementById('phone').value.trim() || '-';
-      const email = document.getElementById('email').value.trim() || '-';
-
-      const extras = getSelectedExtras();
-      const extraText = document.getElementById('extra_other').value.trim() || '-';
-
-      return `Leistungen: ${services}\nObjekt / Raum: ${object}\nGröße: ${size}\nWunschzeitraum: ${time}\n\nWeitere Infos:\n${notes}\n\nSonstiges / Wünsche:\n${extras.length? extras.join(', ') : '-'}${extraText ? ('\nDetails: ' + extraText) : ''}\n\nKontakt:\nName: ${name}\nTelefon: ${phone}\nE-Mail: ${email}`;
-    }
-
-    function getSelectedExtras(){
-      const keys = ['extra_windows','extra_keller','extra_mobel','extra_heizung','extra_sonder'];
-      const map = {
-        extra_windows: 'Fenster putzen',
-        extra_keller: 'Keller entrümpeln',
-        extra_mobel: 'Möbel abbauen/aufbauen',
-        extra_heizung: 'Heizkörper reinigen',
-        extra_sonder: 'Sonstiges'
-      };
-      return keys.filter(k => document.getElementById(k).checked).map(k => map[k]);
-    }
-
-    function updateSummary(){
-      const sum = document.getElementById('summary');
-      if(selected.size===0 && !document.getElementById('object').value.trim()){ sum.textContent='(noch keine Auswahl)'; return; }
-      const lines = Array.from(selected).map(s => `• ${s}`).join('\n');
-      const obj = document.getElementById('object').value.trim() || '-';
-      const extraList = getSelectedExtras();
-      const extraText = document.getElementById('extra_other').value.trim() || '-';
-      sum.textContent = `${lines}\n\nObjekt: ${obj}\nGröße: ${document.getElementById('size').value.trim() || '-'}\nZeitraum: ${document.getElementById('time').value.trim() || '-'}\n\nHinweis: ${document.getElementById('notes').value.trim() || '-'}\n\nSonstiges / Wünsche: ${extraList.length? extraList.join(', ') : '-'}\nDetails: ${extraText}`;
-    }
-
-    function updateProgress(){
-      const bar = document.getElementById('progBar');
-      let score = 0; if(selected.size>0) score+=30; if(document.getElementById('object').value.trim()) score+=25; if(document.getElementById('name').value.trim() && document.getElementById('email').value.trim()) score+=45; bar.style.width = score + '%';
-    }
-
-    ['object','size','time','notes','extra_other','name','phone','email'].forEach(id=>{ const el=document.getElementById(id); if(el) el.addEventListener('input', ()=>{ updateSummary(); updateProgress(); }); });
-    ['extra_windows','extra_keller','extra_mobel','extra_heizung','extra_sonder'].forEach(id=>{ const el=document.getElementById(id); if(el) el.addEventListener('change', ()=>{ updateSummary(); updateProgress(); }); });
-
-    // toast helper
-    function showToast(txt, success=true){ const t=document.getElementById('toast'); t.textContent=txt; t.style.background = success? 'linear-gradient(90deg,var(--accent1),var(--accent2))' : '#b91c1c'; t.style.display='block'; setTimeout(()=>{ t.style.opacity=1 },10); setTimeout(()=>{ t.style.opacity=0; setTimeout(()=> t.style.display='none',300) },4000); }
-
-    // save lead locally (for offline retrieval) - useful if no backend configured
-    function saveLeadLocally(payload){
-      try{
-        const key = 'hw_leads_v1';
-        const arr = JSON.parse(localStorage.getItem(key) || '[]');
-        arr.push({ts: new Date().toISOString(), ...payload});
-        localStorage.setItem(key, JSON.stringify(arr));
-      }catch(e){ console.warn('local save failed', e); }
-    }
-
-    // helper to clear extras
-    function clearExtras(){
-      ['extra_windows','extra_keller','extra_mobel','extra_heizung','extra_sonder'].forEach(id=>{ const el=document.getElementById(id); if(el) el.checked = false; });
-      document.getElementById('extra_other').value = '';
-    }
-
-    // send logic: try FORMSPREE_ENDPOINT if set, otherwise mailto fallback
-    async function sendSubmission(){
-      const hp = document.getElementById('hp').value.trim(); if(hp){ showToast('Bot-Filter: Anfrage ignoriert.', false); return; }
-      if(selected.size===0){ alert('Bitte wähle mindestens eine Leistung aus.'); return; }
-      const name = document.getElementById('name').value.trim(); const email = document.getElementById('email').value.trim();
-      if(!name || !email){ alert('Bitte gib mindestens Name und E‑Mail an.'); return; }
-
-      const payload = {
-        services: Array.from(selected),
-        object: document.getElementById('object').value.trim(),
-        size: document.getElementById('size').value.trim(),
-        time: document.getElementById('time').value.trim(),
-        notes: document.getElementById('notes').value.trim(),
-        extras: getSelectedExtras(),
-        extra_text: document.getElementById('extra_other').value.trim(),
-        name, phone: document.getElementById('phone').value.trim(), email
-      };
-
-      // disable send button during send
-      const sendBtn = document.getElementById('sendBtn');
-      sendBtn.disabled = true; sendBtn.textContent = 'Sende…';
-
-      // if Formspree endpoint provided, POST JSON
-      if(FORMSPREE_ENDPOINT && FORMSPREE_ENDPOINT.length>5){
-        try{
-          const res = await fetch(FORMSPREE_ENDPOINT, { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify({subject: SUBJECT, ...payload}) });
-          if(res.ok){
-            saveLeadLocally(payload); showToast('Anfrage erfolgreich gesendet.'); clearForm();
-          } else {
-            const text = await res.text(); saveLeadLocally(payload); showToast('Senden fehlgeschlagen — im lokalen Speicher gesichert.', false); console.error('Formspree error', text);
-          }
-        }catch(err){ saveLeadLocally(payload); showToast('Netzwerkfehler — Anfrage lokal gespeichert.', false); console.error(err); }
-      } else {
-        // fallback: mailto
-        try{
-          const subject = encodeURIComponent(SUBJECT + ' — ' + (Array.from(selected)[0] || 'Anfrage'));
-          const body = encodeURIComponent(buildMessage() + "\n\nVielen Dank für deine Anfrage!\nWir melden uns in der Regel innerhalb von 48 Werktagen persönlich bei dir zurück.\n\nDein Handwerks- & IT-Service");
-          const mailto = `mailto:${RECEIVER}?subject=${subject}&body=${body}`;
-          // give user feedback; note: navigation may open mail client
-          showToast('Mailprogramm wird geöffnet — bitte E‑Mail absenden.');
-          // open mail client
-          window.location.href = mailto;
-          saveLeadLocally(payload);
-        }catch(e){ saveLeadLocally(payload); showToast('Fehler beim Öffnen des Mailprogramms — Anfrage gespeichert.', false); }
-      }
-
-      // re-enable
-      sendBtn.disabled = false; sendBtn.textContent = 'Anfrage senden'; updateSummary(); updateProgress();
-    }
-
-    function clearForm(){
-      selected.clear(); document.querySelectorAll('.chip.active').forEach(n=>n.classList.remove('active'));
-      ['object','size','time','notes','extra_other','name','phone','email'].forEach(id=>{ const el=document.getElementById(id); if(el) el.value=''; });
-      clearExtras();
-    }
-
-    document.getElementById('sendBtn').addEventListener('click', sendSubmission);
-
-    // initial
-    updateSummary(); updateProgress();
-
-    /* ---------------- Modal / Impressum / Datenschutz ---------------- */
-    const modal = document.getElementById('modalOverlay');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalContent = document.getElementById('modalContent');
-    const closeBtn = document.getElementById('closeModal');
-    let lastFocused = null;
-
-    document.getElementById('openImprint').addEventListener('click', e=>{
-      e.preventDefault();
-      openModal('Impressum', `\n<strong>Dein Handwerks- & IT-Service</strong><br>\nVeyfkon<br>\nMünchen\n<br><br>\n<strong>Kontakt</strong><br>\nTelefon: +49 163 2229705<br>\nE-Mail: kontakt@veyfkon.de<br><br>\n<strong></strong><br>\n\n`);
-    });
-
-    document.getElementById('openPrivacy').addEventListener('click', e=>{
-      e.preventDefault();
-      openModal('Datenschutzerklärung', `\n<strong>1. Allgemeine Hinweise</strong><br>\nDer Schutz deiner Daten ist uns wichtig. Diese Website erhebt nur die Daten, die du aktiv im Anfrageformular angibst.<br><br>\n<strong>2. Anfrageformular</strong><br>\nBei Nutzung des Formulars werden Name, E-Mail und optionale Angaben zur Bearbeitung deiner Anfrage verarbeitet.<br><br>\n<strong>3. Speicherung</strong><br>\nDaten werden ausschließlich zur Bearbeitung der Anfrage genutzt und nicht an Dritte weitergegeben, außer wenn dies zur Bearbeitung (z. B. Unterauftrag) erforderlich ist.<br><br>\n<strong>4. Rechte</strong><br>\nDu hast jederzeit das Recht auf Auskunft, Löschung oder Berichtigung deiner gespeicherten Daten.\n`);
-    });
-
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', e=>{ if(e.target===modal) closeModal(); });
-
-    // close on Escape
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape' && modal.style.display === 'flex'){
-        closeModal();
-      }
-    });
-
-    function openModal(title, content){
-      lastFocused = document.activeElement;
-      modalTitle.innerHTML = title;
-      modalContent.innerHTML = content;
-      modal.style.display = 'flex';
-      modal.setAttribute('aria-hidden','false');
-      // prevent background scroll
-      document.body.style.overflow = 'hidden';
-      // focus management
-      closeBtn.focus();
-    }
-
-    function closeModal(){
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
-      // restore focus
-      if(lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    function validatePilot(){
+      const name=document.getElementById('name').value.trim();
+      const email=document.getElementById('email').value.trim();
+      if(!name||!email){alert('Bitte Name und E‑Mail ausfüllen.');return false}
+      alert('Danke — deine Pilotanfrage wird gesendet (Formspree ID zuvor anpassen).');
+      return true;
     }
   </script>
 </body>
