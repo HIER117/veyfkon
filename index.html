@@ -1,257 +1,152 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projekt: Mobile Energieversorgung – Skalierbarer Aufbau</title>
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mobile Energieversorgung – Projekt</title>
 <style>
-:root {
-  --bg: #060b15;
-  --card: #101827;
-  --accent: #3ef2d4;
-  --text: #e5e7eb;
-  --muted: #94a3b8;
+:root{
+  --bg:#060b15; --card:#0f1724; --accent:#2ee6c8; --text:#e7f6fb; --muted:#97a7b9;
 }
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;}
+body{background: radial-gradient(circle at 10% 10%, #0f1b2b, var(--bg)); color:var(--text); line-height:1.6;}
+.container{max-width:1200px;margin:0 auto;padding:48px 20px;}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo{font-weight:700;color:var(--accent);letter-spacing:1px}
+nav a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:600}
+.hero{min-height:56vh;display:flex;align-items:center;gap:30px}
+.hero-left{flex:1}
+h1{font-size:clamp(2rem,4vw,3.2rem);color:#cffef0;margin-bottom:8px}
+.lead{color:var(--muted);max-width:720px}
+.hero-right{flex:1;display:flex;justify-content:center;align-items:center}
+.card{background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);padding:20px;border-radius:14px;box-shadow:0 20px 40px rgba(0,0,0,0.45)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:36px}
+.section-title{color:var(--accent);font-size:1.25rem;margin-bottom:12px}
+.timeline{border-left:3px solid rgba(46,230,200,0.12);padding-left:18px}
+.timeline-step{margin-bottom:18px;position:relative;padding-left:18px}
+.timeline-step::before{content:"";width:12px;height:12px;background:var(--accent);border-radius:50%;position:absolute;left:-28px;top:6px}
+footer{padding:30px 0;text-align:center;color:var(--muted);font-size:0.95rem;border-top:1px solid rgba(255,255,255,0.03);margin-top:40px}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, sans-serif;
-}
-
-body {
-  background: radial-gradient(circle at top, #0d1424, var(--bg));
-  color: var(--text);
-  line-height: 1.7;
-}
-
-section {
-  max-width: 1200px;
-  margin: auto;
-  padding: 4rem 1.2rem;
-}
-
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.hero p {
-  max-width: 750px;
-  margin: auto;
-  color: var(--muted);
-  font-size: 1.2rem;
-}
-
-.grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-}
-
-.card {
-  background: linear-gradient(145deg, #0c1120, var(--card));
-  padding: 2rem;
-  border-radius: 18px;
-  box-shadow: 0 25px 40px rgba(0,0,0,0.4);
-  opacity: 0;
-  transform: translateY(35px);
-  transition: 0.7s ease;
-}
-
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card h3 {
-  color: var(--accent);
-  margin-bottom: 0.6rem;
-  font-size: 1.4rem;
-}
-
-.timeline {
-  border-left: 3px solid var(--accent);
-  padding-left: 2rem;
-}
-
-.timeline-step {
-  margin-bottom: 2.5rem;
-  position: relative;
-}
-
-.timeline-step::before {
-  content: "";
-  width: 13px;
-  height: 13px;
-  background: var(--accent);
-  border-radius: 50%;
-  position: absolute;
-  left: -30px;
-  top: 5px;
-}
-
-.image img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-footer {
-  text-align: center;
-  color: var(--muted);
-  padding: 2rem;
-  font-size: 0.9rem;
-}
+/* responsive */
+@media (max-width:900px){ .hero{flex-direction:column;text-align:center} header{flex-direction:column;gap:12px} nav a{margin-left:10px} }
 </style>
 </head>
-
 <body>
+  <div class="container">
+    <header>
+      <div class="logo">EnergyHub München</div>
+      <nav>
+        <a href="#overview">Überblick</a>
+        <a href="#plan">Plan</a>
+        <a href="#scaling">Skalierung</a>
+        <a href="global.html">Global Expansion</a>
+      </nav>
+    </header>
 
-<section class="hero">
-  <h1>Mobile Energieversorgung</h1>
-  <p>
-    Ein skalierbares Projekt für urbane Notstromversorgung,
-    mobile Ladeinfrastruktur und autarke Energiesysteme – startend in kleinen Schritten.
-  </p>
-</section>
+    <section class="hero" id="overview">
+      <div class="hero-left">
+        <h1>Mobile Energieversorgung — klein starten, global denken</h1>
+        <p class="lead">Pilot: Kompaktes E-Mobile-Ladefahrzeug → Flotte → Container → Container-Shipping & Pfandsystem. Ziel: München als resilienter Energie-Hub.</p>
+        <div style="margin-top:18px" class="card">
+          <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+            <div><strong>Pilotstart:</strong> Mobile Pannenhilfe</div>
+            <div><strong>Ziel (5 Jahre):</strong> nationale Flotte + Containerlogistik</div>
+            <div><strong>Langfristig:</strong> globales Pfand-Containernetz</div>
+          </div>
+        </div>
+      </div>
 
-<!-- PROJEKTÜBERBLICK -->
-<section>
-  <h2 style="text-align:center; margin-bottom:2rem; color: var(--accent);">Projektüberblick</h2>
+      <div class="hero-right">
+        <div class="card" style="width:320px;text-align:left">
+          <h3 style="color:var(--accent)">Quick Facts</h3>
+          <p style="color:var(--muted);font-size:0.95rem;margin-top:8px">
+            Startkapital günstig, schneller Markteintritt, skalierbares Einnahmemodell (Service, Miete, Pfand).
+          </p>
+          <p style="margin-top:10px"><strong>Ideal für:</strong><br/>Stadtwerke, Eventbetreiber, Hilfsorganisationen, Logistikpartner</p>
+        </div>
+      </div>
+    </section>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Vision</h3>
-      <p>
-        Ein flexibles, modulares System aus mobilen Batteriespeichern,
-        das Schritt für Schritt wächst und Städte sowie Verbraucher
-        in Zukunft vor Ausfällen schützt.
-      </p>
-    </div>
+    <!-- Projektstruktur -->
+    <section id="plan">
+      <h2 class="section-title">Projektstruktur</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>1. Pilot: Mobile Pannenhilfe</h3>
+          <p>Ein kleines Nutzfahrzeug mit 20–50 kWh Modul führt Vor-Ort-Notladung durch. Testmärkte: München Innenstadt, Veranstaltungsorte.</p>
+        </div>
 
-    <div class="card">
-      <h3>Warum jetzt?</h3>
-      <p>
-        Der Berliner Stromausfall hat gezeigt:
-        Urbane Gebiete benötigen flexible Energie-Backups.
-        Das Projekt hat aktuell höchsten gesellschaftlichen und wirtschaftlichen Mehrwert.
-      </p>
-    </div>
+        <div class="card">
+          <h3>2. Mini-Flotte</h3>
+          <p>Skalierung auf 5–20 Fahrzeuge, zentrale Disposition, Buchungs-App, Wartung & Lade-Logistik.</p>
+        </div>
 
-    <div class="card">
-      <h3>Skalierung</h3>
-      <p>
-        Start mit kleinem Pilotprojekt → Einnahmen generieren → Kapital reinvestieren
-        → Weiterer Ausbau bis hin zu Groß-Containern & Stadtversorgung.
-      </p>
-    </div>
+        <div class="card">
+          <h3>3. Mobile Power Cubes</h3>
+          <p>Transportierbare 5–20 kWh Einheiten für Gewerbe, Baustellen, Events und Haushaltssicherung.</p>
+        </div>
+
+        <div class="card">
+          <h3>4. Container</h3>
+          <p>100–500 kWh Container (später 1–5 MWh) als mobile Kraftwerke für Wohnblocks, Kliniken oder kritische Infrastruktur.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skalierung -->
+    <section id="scaling">
+      <h2 class="section-title">Skalierung & Einnahmemodelle</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Einnahmen</h3>
+          <ul style="color:var(--muted);margin-top:8px">
+            <li>Service-Umsatz: Notladung & Vor-Ort-Service</li>
+            <li>Vermietung: Power Cubes & Container</li>
+            <li>Pfandmodell: wiederverwendbare Container mit Rückgabegebühr</li>
+            <li>Kooperationen: Stadtwerke, Behörden, NGOs</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Skalierungslogik</h3>
+          <p style="color:var(--muted)">Reinvestition erster Gewinne in Flottenerweiterung → Leihstationen & Logistikpartner → regionale Containerzentren → internationales Shipping.</p>
+        </div>
+
+        <div class="card">
+          <h3>München als Hub</h3>
+          <p style="color:var(--muted)">Strategische Lage, starke Wirtschaft, Hafen-/Logistik-Anbindungen und Innovationsförderung machen München ideal als europäischer Ausgangspunkt.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Expansion Teaser -->
+    <section id="global">
+      <h2 class="section-title">Global Expansion (Kurz)</h2>
+      <div class="card">
+        <p style="color:var(--muted);margin-bottom:12px"><strong>Kernidee:</strong> Voraufgeladene Container verschiffen — Energielieferung weltweit — Pfandsystem sorgt für Rücklauf & Wiederverwendung.</p>
+        <div class="timeline">
+          <div class="timeline-step">
+            <h4 style="margin:0;color:var(--accent)">Phase: Vorladen & Shipping</h4>
+            <p style="color:var(--muted)">Ladung in regionalen Ladezentren (z. B. Solarpark), Versand per LKW/Schiff, Nutzung in Zielregion, Rückgabe/Abholung.</p>
+          </div>
+
+          <div class="timeline-step">
+            <h4 style="margin:0;color:var(--accent)">Pfandsystem</h4>
+            <p style="color:var(--muted)">Kunden zahlen Pfand/Leihgebühr; Container rotieren im Netzwerk — planbare Einnahmen & niedrige Eintrittsbarriere für Abnehmer.</p>
+          </div>
+
+          <div class="timeline-step">
+            <h4 style="margin:0;color:var(--accent)">Krisensicherheit</h4>
+            <p style="color:var(--muted)">Container als mobile Kraftwerke im Katastrophenfall — Kooperationen mit Behörden & NGOs.</p>
+          </div>
+        </div>
+        <p style="margin-top:12px"><a href="global.html" style="color:var(--accent);text-decoration:none;font-weight:700">Mehr zur Global Expansion →</a></p>
+      </div>
+    </section>
+
+    <footer>
+      EnergyHub München — Projektpräsentation · 2026 · Kontakt: team@energyhub-m.de
+    </footer>
   </div>
-</section>
-
-<!-- SCHRITT FÜR SCHRITT: DER WACHSTUMSPLAN -->
-<section>
-  <h2 style="text-align:center; margin-bottom:2rem; color: var(--accent);">Schritt-für-Schritt Wachstumsplan</h2>
-
-  <div class="timeline">
-
-    <div class="timeline-step">
-      <h3>1. Pilotprojekt: Mobile Pannenhilfe für E-Autos</h3>
-      <p>
-        Ein kleines Einsatzfahrzeug mit Batterieeinheit bietet Notladungen im Stadtgebiet.
-        Sofort umsetzbar – perfekt für Testlauf, Kundenfeedback und erste Einnahmen.
-      </p>
-    </div>
-
-    <div class="timeline-step">
-      <h3>2. Ausbau kleiner Akkustationen</h3>
-      <p>
-        Transportierbare 5–10 kWh-Module für Events, Kleingewerbe oder Notstrom bei Haushalten.
-        Leicht zu vermieten → stabile Einnahmequelle.
-      </p>
-    </div>
-
-    <div class="timeline-step">
-      <h3>3. Mobile Akku-Container</h3>
-      <p>
-        20–50 Fuß Container mit 100–500 kWh Speicherkapazität.
-        Versorgung größerer Anlagen, Einkaufszentren oder
-        kritischer Infrastruktur bei Ausfällen.
-      </p>
-    </div>
-
-    <div class="timeline-step">
-      <h3>4. Städtische Notfallversorgung</h3>
-      <p>
-        Großspeicher zur Überbrückung ganzer Wohnblöcke.
-        Kooperation mit Stadtwerken, Behörden & Krisenmanagement.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- BILDER -->
-<section>
-  <h2 style="text-align:center; margin-bottom:2rem; color: var(--accent);">Bilder & Konzeptdarstellungen</h2>
-
-  <div class="grid">
-    <div class="card image">
-      <img src="images/bild1.jpg" alt="">
-      <p>Kleines Pilotfahrzeug für mobile Notladungen.</p>
-    </div>
-
-    <div class="card image">
-      <img src="images/bild2.jpg" alt="">
-      <p>Winterbetrieb: Einsätze bei Kälte & Energieengpässen.</p>
-    </div>
-
-    <div class="card image">
-      <img src="images/bild3.jpg" alt="">
-      <p>Containerlösung für skalierbare Versorgung.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ZIEL -->
-<section>
-  <div class="grid">
-    <div class="card">
-      <h3>Endziel</h3>
-      <p>
-        Eine vollständig mobile, skalierbare Energieinfrastruktur,
-        die Städte widerstandsfähiger macht, neue Einnahmemodelle schafft
-        und flexible Lösungen für die Energiewirtschaft bietet.
-      </p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2026 – Projekt Mobile Energieversorgung
-</footer>
-
-<script>
-const cards = document.querySelectorAll('.card');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.2 });
-
-cards.forEach(card => observer.observe(card));
-</script>
-
 </body>
 </html>
