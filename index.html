@@ -1,174 +1,170 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EnergyVision – Dezentrales Stromsystem</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projektpräsentation – Dezentrales Energiesystem</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #0a0f1c;
-            color: #fff;
-            overflow-x: hidden;
-        }
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        color: #222;
+    }
 
-        header {
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0,0,0,0.4);
-            backdrop-filter: blur(12px);
-            position: sticky;
-            top: 0;
-        }
+    header {
+        background: #1a1f36;
+        padding: 40px;
+        color: white;
+        text-align: center;
+    }
 
-        header h1 {
-            font-size: 28px;
-            letter-spacing: 2px;
-        }
+    header h1 {
+        margin: 0;
+        font-size: 34px;
+        letter-spacing: 1px;
+    }
 
-        header nav a {
-            margin-left: 25px;
-            color: #6bdcff;
-            text-decoration: none;
-            font-weight: 500;
-        }
+    main {
+        max-width: 900px;
+        margin: 40px auto;
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
 
-        .hero {
-            height: 90vh;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(10,15,28,1)),
-                        url('DEIN-BILD-HIER.jpg') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 20px;
-        }
+    h2 {
+        border-left: 5px solid #0077cc;
+        padding-left: 10px;
+        margin-top: 40px;
+        color: #0077cc;
+    }
 
-        .hero h2 {
-            font-size: 58px;
-            text-shadow: 0 0 20px rgba(0,255,255,0.5);
-            animation: fadeIn 2s ease forwards;
-        }
+    .section {
+        margin-bottom: 40px;
+        line-height: 1.5;
+    }
 
-        .hero p {
-            font-size: 22px;
-            margin-top: 20px;
-            max-width: 700px;
-            animation: fadeIn 2.5s ease forwards;
-        }
+    .timeline {
+        background: #eef5ff;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
+    .timeline div {
+        margin-bottom: 15px;
+    }
 
-        section {
-            padding: 80px 40px;
-        }
-
-        .section-title {
-            font-size: 36px;
-            text-align: center;
-            margin-bottom: 40px;
-            color: #6bdcff;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: rgba(255,255,255,0.05);
-            padding: 25px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: #6bdcff;
-            box-shadow: 0 0 20px rgba(0,255,255,0.2);
-        }
-
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        footer {
-            padding: 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #aaa;
-            margin-top: 60px;
-        }
-    </style>
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #777;
+        font-size: 14px;
+    }
+</style>
 
 </head>
 <body>
 
 <header>
-    <h1>EnergyVision</h1>
-    <nav>
-        <a href="#modules">Module</a>
-        <a href="#tech">Technik</a>
-        <a href="#vision">Vision</a>
-    </nav>
+    <h1>Projektpräsentation<br>Dezentrales Batterie- und Notstromversorgungssystem</h1>
 </header>
 
-<div class="hero">
-    <div>
-        <h2>Die Zukunft der Energie beginnt heute</h2>
-        <p>Modulare Batteriesysteme für Haushalte, Häuser und ganze Stadtteile – inspiriert durch den Stromausfall in Berlin.</p>
-    </div>
-</div>
+<main>
 
-<section id="modules">
-    <h2 class="section-title">Energie-Module</h2>
+    <section class="section">
+        <h2>1. Projektüberblick</h2>
+        <p>
+            Das Projekt entwickelt ein modulares, dezentrales Energiespeichersystem, das in Wohnungen, 
+            Häusern, Gewerbe und vollständigen Wohnblöcken eingesetzt werden kann. 
+            Hintergrund ist der zunehmende Bedarf an Notstromlösungen, 
+            ausgelöst durch Ereignisse wie den Stromausfall in Berlin.
+        </p>
+    </section>
 
-    <div class="grid">
+    <section class="section">
+        <h2>2. Problemstellung</h2>
+        <p>
+            Regionale Stromausfälle verursachen erhebliche Probleme: ausgefallene Heizungen, 
+            keine Kommunikationsmöglichkeiten, Lebensmittelverlust und fehlende medizinische Versorgung.
+            Viele Haushalte haben keine eigenen Batteriesysteme, da diese bislang teuer und komplex waren.
+        </p>
+    </section>
 
-        <div class="card">
-            <img src="DEIN-BILD-HIER-1.jpg" alt="Wohnungsmodul">
-            <h3>Wohnungsmodul</h3>
-            <p>1–3 kWh für Mieter – kompakt, sicher, leise. Ideal als Notstrom oder Solar-Zusatzspeicher.</p>
+    <section class="section">
+        <h2>3. Projektziel</h2>
+        <p>
+            Ziel ist die Entwicklung eines flexiblen Batteriesystems:
+        </p>
+        <ul>
+            <li>Notstromversorgung für Haushalte und Wohnanlagen</li>
+            <li>Modular erweiterbare Speichereinheiten</li>
+            <li>Einsatz in Fahrzeugen oder als mobile Energiequelle</li>
+            <li>Integration mit Solarenergie möglich</li>
+            <li>Containerlösungen für mehrere hundert bis tausend Haushalte</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>4. Nutzen & Mehrwert (für Bevölkerung und Infrastruktur)</h2>
+        <ul>
+            <li>Erhöhte Versorgungssicherheit</li>
+            <li>Unabhängigkeit bei Stromausfällen</li>
+            <li>Entlastung des Stromnetzes</li>
+            <li>Beitrag zur Energiewende</li>
+            <li>Einsatz im Katastrophenschutz möglich</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>5. Systemmodule</h2>
+        <ul>
+            <li><b>Wohnungsmodul:</b> 1–3 kWh für kleine Haushalte</li>
+            <li><b>Hausmodul:</b> 5–15 kWh Energiespeicher</li>
+            <li><b>Mobiles Fahrzeugmodul:</b> transportable Energiequelle</li>
+            <li><b>Energy-Container:</b> 500 kWh – 5 MWh, geeignet für ganze Wohnblöcke</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>6. Haushalte pro Container</h2>
+        <p>Beispiel: 5 MWh Container</p>
+        <ul>
+            <li>Bis zu 500 Haushalte (Vollversorgung, 1 Tag)</li>
+            <li>Bis zu 1.600 Haushalte (Notstrom, 1 Tag)</li>
+            <li>200 Haushalte über 5 Tage (Notbetrieb)</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>7. Projektzeitplan</h2>
+
+        <div class="timeline">
+            <div><b>Phase 1 – Konzept (2–3 Wochen):</b> Marktanalyse, Anforderungen, Designs</div>
+            <div><b>Phase 2 – Entwicklung (6–8 Wochen):</b> Prototypen, Technik, Tests</div>
+            <div><b>Phase 3 – Sicherheit (4 Wochen):</b> Zertifizierung, Belastungstests</div>
+            <div><b>Phase 4 – Produktion (6 Wochen):</b> Hersteller, Serienbau, Dokumentation</div>
         </div>
 
-        <div class="card">
-            <img src="DEIN-BILD-HIER-2.jpg" alt="Hausmodul">
-            <h3>Hausmodul</h3>
-            <p>5–15 kWh Speicher für Häuser. Perfekt für Solaranlagen oder autarke Stromversorgung.</p>
-        </div>
+        <p><b>Gesamtdauer:</b> ca. 4–5 Monate bis zur Marktreife</p>
+    </section>
 
-        <div class="card">
-            <img src="DEIN-BILD-HIER-3.jpg" alt="Container">
-            <h3>Energy Container</h3>
-            <p>Bis zu 5 MWh Kapazität. Kann ganze Wohnblöcke oder 1.500 Haushalte im Notfall versorgen.</p>
-        </div>
+    <section class="section">
+        <h2>8. Zukunftspotenzial</h2>
+        <p>
+            Der Bedarf an dezentralen Stromlösungen steigt europaweit. 
+            Das Projekt ist skalierbar und kann später in Richtung Smart-Grid, Städtepartnerschaften,
+            Katastrophenschutz und Solar-Industrie erweitert werden.
+        </p>
+    </section>
 
-    </div>
-</section>
-
-<section id="vision">
-    <h2 class="section-title">Unsere Vision</h2>
-    <p style="text-align:center; max-width:800px; margin:auto;">
-        Energie soll sicher, sauber und jederzeit verfügbar sein.  
-        Unser System schützt Menschen bei Stromausfällen, entlastet das Stromnetz 
-        und ermöglicht eine neue Art der dezentralen Energieversorgung.
-    </p>
-</section>
+</main>
 
 <footer>
-    © 2026 EnergyVision — Dezentrale Energiesysteme der Zukunft
+    Projektpräsentation – Dezentrales Energiesystem © 2026
 </footer>
 
 </body>
