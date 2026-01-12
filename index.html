@@ -8,157 +8,217 @@
 <style>
     body {
         margin: 0;
-        font-family: Arial, sans-serif;
-        background: #f4f4f4;
-        color: #222;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #0a0f1c;
+        color: #e6f1ff;
+        overflow-x: hidden;
     }
 
+    /* Header */
     header {
-        background: #1a1f36;
-        padding: 40px;
-        color: white;
+        padding: 40px 40px;
         text-align: center;
+        background: rgba(0,0,0,0.3);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     header h1 {
-        margin: 0;
         font-size: 34px;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
+        margin: 0;
+        color: #6bdcff;
+        text-shadow: 0 0 10px rgba(0,255,255,0.3);
+        animation: fadeIn 1.5s ease forwards;
     }
 
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Main Content */
     main {
         max-width: 900px;
-        margin: 40px auto;
-        background: white;
-        padding: 40px;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        margin: 50px auto;
+        padding: 0 20px;
+        animation: fadeUp 1.5s ease forwards;
     }
 
     h2 {
-        border-left: 5px solid #0077cc;
-        padding-left: 10px;
-        margin-top: 40px;
-        color: #0077cc;
+        color: #6bdcff;
+        font-size: 28px;
+        border-left: 4px solid #6bdcff;
+        padding-left: 12px;
+        margin-top: 60px;
+        margin-bottom: 20px;
+        text-shadow: 0 0 8px rgba(0,255,255,0.2);
     }
 
-    .section {
-        margin-bottom: 40px;
-        line-height: 1.5;
+    p, li {
+        color: #cfe9ff;
+        line-height: 1.6;
+        font-size: 17px;
     }
 
-    .timeline {
-        background: #eef5ff;
-        padding: 20px;
-        border-radius: 8px;
+    ul {
         margin-top: 10px;
     }
 
-    .timeline div {
-        margin-bottom: 15px;
+    /* Card Section */
+    .card {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        padding: 25px;
+        border-radius: 14px;
+        margin: 20px 0;
+        backdrop-filter: blur(10px);
+        transition: .3s;
     }
 
-    footer {
-        text-align: center;
+    .card:hover {
+        border-color: #6bdcff;
+        box-shadow: 0 0 20px rgba(0,255,255,0.25);
+        transform: translateY(-6px);
+    }
+
+    /* Timeline */
+    .timeline {
+        background: rgba(255,255,255,0.05);
         padding: 20px;
-        color: #777;
-        font-size: 14px;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 12px;
+        margin-top: 10px;
+        backdrop-filter: blur(10px);
     }
-</style>
 
+    .timeline div {
+        margin-bottom: 12px;
+    }
+
+    /* Footer */
+    footer {
+        margin-top: 80px;
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #7aa0c4;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        background: rgba(0,0,0,0.2);
+    }
+
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>Projektpräsentation<br>Dezentrales Batterie- und Notstromversorgungssystem</h1>
+    <h1>Projektpräsentation<br>Dezentrales Batterie- und Energiesystem</h1>
 </header>
 
 <main>
 
-    <section class="section">
+    <section>
         <h2>1. Projektüberblick</h2>
-        <p>
-            Das Projekt entwickelt ein modulares, dezentrales Energiespeichersystem, das in Wohnungen, 
-            Häusern, Gewerbe und vollständigen Wohnblöcken eingesetzt werden kann. 
-            Hintergrund ist der zunehmende Bedarf an Notstromlösungen, 
-            ausgelöst durch Ereignisse wie den Stromausfall in Berlin.
-        </p>
-    </section>
-
-    <section class="section">
-        <h2>2. Problemstellung</h2>
-        <p>
-            Regionale Stromausfälle verursachen erhebliche Probleme: ausgefallene Heizungen, 
-            keine Kommunikationsmöglichkeiten, Lebensmittelverlust und fehlende medizinische Versorgung.
-            Viele Haushalte haben keine eigenen Batteriesysteme, da diese bislang teuer und komplex waren.
-        </p>
-    </section>
-
-    <section class="section">
-        <h2>3. Projektziel</h2>
-        <p>
-            Ziel ist die Entwicklung eines flexiblen Batteriesystems:
-        </p>
-        <ul>
-            <li>Notstromversorgung für Haushalte und Wohnanlagen</li>
-            <li>Modular erweiterbare Speichereinheiten</li>
-            <li>Einsatz in Fahrzeugen oder als mobile Energiequelle</li>
-            <li>Integration mit Solarenergie möglich</li>
-            <li>Containerlösungen für mehrere hundert bis tausend Haushalte</li>
-        </ul>
-    </section>
-
-    <section class="section">
-        <h2>4. Nutzen & Mehrwert (für Bevölkerung und Infrastruktur)</h2>
-        <ul>
-            <li>Erhöhte Versorgungssicherheit</li>
-            <li>Unabhängigkeit bei Stromausfällen</li>
-            <li>Entlastung des Stromnetzes</li>
-            <li>Beitrag zur Energiewende</li>
-            <li>Einsatz im Katastrophenschutz möglich</li>
-        </ul>
-    </section>
-
-    <section class="section">
-        <h2>5. Systemmodule</h2>
-        <ul>
-            <li><b>Wohnungsmodul:</b> 1–3 kWh für kleine Haushalte</li>
-            <li><b>Hausmodul:</b> 5–15 kWh Energiespeicher</li>
-            <li><b>Mobiles Fahrzeugmodul:</b> transportable Energiequelle</li>
-            <li><b>Energy-Container:</b> 500 kWh – 5 MWh, geeignet für ganze Wohnblöcke</li>
-        </ul>
-    </section>
-
-    <section class="section">
-        <h2>6. Haushalte pro Container</h2>
-        <p>Beispiel: 5 MWh Container</p>
-        <ul>
-            <li>Bis zu 500 Haushalte (Vollversorgung, 1 Tag)</li>
-            <li>Bis zu 1.600 Haushalte (Notstrom, 1 Tag)</li>
-            <li>200 Haushalte über 5 Tage (Notbetrieb)</li>
-        </ul>
-    </section>
-
-    <section class="section">
-        <h2>7. Projektzeitplan</h2>
-
-        <div class="timeline">
-            <div><b>Phase 1 – Konzept (2–3 Wochen):</b> Marktanalyse, Anforderungen, Designs</div>
-            <div><b>Phase 2 – Entwicklung (6–8 Wochen):</b> Prototypen, Technik, Tests</div>
-            <div><b>Phase 3 – Sicherheit (4 Wochen):</b> Zertifizierung, Belastungstests</div>
-            <div><b>Phase 4 – Produktion (6 Wochen):</b> Hersteller, Serienbau, Dokumentation</div>
+        <div class="card">
+            <p>
+                Das Projekt entwickelt ein modulares, skalierbares Energiespeichersystem für Haushalte,
+                Häuser und komplette Wohnanlagen. Ziel ist eine sichere, autonome Stromversorgung, 
+                die besonders bei regionalen Ausfällen – wie dem Stromausfall in Berlin – zuverlässigen Schutz bietet.
+            </p>
         </div>
-
-        <p><b>Gesamtdauer:</b> ca. 4–5 Monate bis zur Marktreife</p>
     </section>
 
-    <section class="section">
-        <h2>8. Zukunftspotenzial</h2>
-        <p>
-            Der Bedarf an dezentralen Stromlösungen steigt europaweit. 
-            Das Projekt ist skalierbar und kann später in Richtung Smart-Grid, Städtepartnerschaften,
-            Katastrophenschutz und Solar-Industrie erweitert werden.
-        </p>
+    <section>
+        <h2>2. Problemstellung</h2>
+        <div class="card">
+            <p>
+                Zunehmende Stromausfälle legen Haushalte, Kommunikation, Transport und Heizung lahm. 
+                Die vorhandene Infrastruktur bietet kaum Notstromlösungen – insbesondere nicht für 
+                Mehrfamilienhäuser oder ganze Wohnviertel.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Projektziel</h2>
+        <div class="card">
+            <ul>
+                <li>Sichere Notstromversorgung für einzelne Haushalte und Wohnblöcke</li>
+                <li>Modulare Batteriemodule von 1 kWh bis 5 MWh</li>
+                <li>Mobile Energieversorgung (z. B. Fahrzeugmodule)</li>
+                <li>Solarintegration möglich</li>
+                <li>Skalierbare Containerlösungen für Infrastruktur</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Nutzen & gesellschaftlicher Mehrwert</h2>
+        <div class="card">
+            <ul>
+                <li>Erhöhte Versorgungssicherheit für Bevölkerung</li>
+                <li>Notbetrieb für Heizung, Kommunikation, Licht und Grundversorgung</li>
+                <li>Entlastung des Stromnetzes</li>
+                <li>Nutzung erneuerbarer Energie effizienter</li>
+                <li>Einsatzfähig im Katastrophenschutz</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>5. Systemmodule</h2>
+        <div class="card">
+            <ul>
+                <li><b>Wohnungsmodul:</b> 1–3 kWh Energiespeicher</li>
+                <li><b>Hausmodul:</b> 5–15 kWh Energiespeicher</li>
+                <li><b>Fahrzeugmodul:</b> Mobile Notstromversorgung</li>
+                <li><b>Energy-Container:</b> 500 kWh – 5 MWh Kapazität</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>6. Haushalte pro Container</h2>
+        <div class="card">
+            <ul>
+                <li><b>500 kWh Container:</b> 50 Haushalte (1 Tag Notversorgung)</li>
+                <li><b>1–2 MWh Container:</b> 150–600 Haushalte</li>
+                <li><b>5 MWh Container:</b> bis zu 1.600 Haushalte (Notstrom, 1 Tag)</li>
+                <li>Vollversorgung möglich für 350–500 Haushalte (1 Tag)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>7. Projektzeitplan</h2>
+        <div class="timeline">
+            <div><b>Phase 1 – Konzept (2–3 Wochen):</b> Marktanalyse, Anforderungen, Design</div>
+            <div><b>Phase 2 – Entwicklung (6–8 Wochen):</b> Prototypenbau, Batterietechnologie, Testläufe</div>
+            <div><b>Phase 3 – Sicherheit (4 Wochen):</b> Zertifizierung, Belastungstests</div>
+            <div><b>Phase 4 – Produktion (6 Wochen):</b> Herstellerwahl, Serienfertigung</div>
+        </div>
+        <p><b>Gesamtdauer:</b> ca. 4–5 Monate</p>
+    </section>
+
+    <section>
+        <h2>8. Zukunftsperspektive</h2>
+        <div class="card">
+            <p>
+                Das System ist skalierbar und kann zukünftig in Richtung Smart-Grid, 
+                kommunale Energiekonzepte, Katastrophenschutz, Ladeinfrastruktur 
+                und dezentrale Energieautarkie weiterentwickelt werden.
+            </p>
+        </div>
     </section>
 
 </main>
