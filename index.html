@@ -3,68 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mobile Energieversorgung</title>
+<title>Projekt: Mobile Energieversorgung – Skalierbarer Aufbau</title>
 
 <style>
 :root {
-  --bg: #0a0f1a;
-  --card: #111827;
-  --accent: #38f2d6;
+  --bg: #060b15;
+  --card: #101827;
+  --accent: #3ef2d4;
   --text: #e5e7eb;
-  --muted: #9ca3af;
+  --muted: #94a3b8;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: system-ui, sans-serif;
 }
 
 body {
-  background: radial-gradient(circle at top, #0f172a, var(--bg));
+  background: radial-gradient(circle at top, #0d1424, var(--bg));
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 section {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
-  padding: 4rem 1.5rem;
+  padding: 4rem 1.2rem;
 }
 
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(2.4rem, 6vw, 4rem);
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .hero p {
-  color: var(--muted);
-  max-width: 700px;
+  max-width: 750px;
   margin: auto;
+  color: var(--muted);
+  font-size: 1.2rem;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
 }
 
 .card {
-  background: linear-gradient(145deg, #0f172a, var(--card));
+  background: linear-gradient(145deg, #0c1120, var(--card));
   padding: 2rem;
   border-radius: 18px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+  box-shadow: 0 25px 40px rgba(0,0,0,0.4);
   opacity: 0;
-  transform: translateY(30px);
-  transition: 0.6s ease;
+  transform: translateY(35px);
+  transition: 0.7s ease;
 }
 
 .card.visible {
@@ -75,18 +79,39 @@ section {
 .card h3 {
   color: var(--accent);
   margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+}
+
+.timeline {
+  border-left: 3px solid var(--accent);
+  padding-left: 2rem;
+}
+
+.timeline-step {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.timeline-step::before {
+  content: "";
+  width: 13px;
+  height: 13px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: absolute;
+  left: -30px;
+  top: 5px;
 }
 
 .image img {
   width: 100%;
-  border-radius: 14px;
-  margin-bottom: 1rem;
+  border-radius: 12px;
 }
 
 footer {
   text-align: center;
-  padding: 2rem;
   color: var(--muted);
+  padding: 2rem;
   font-size: 0.9rem;
 }
 </style>
@@ -94,93 +119,107 @@ footer {
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
-  <div>
-    <h1>Mobile Energieversorgung</h1>
-    <p>
-      Flexible Stromlösungen auf Batteriebasis –  
-      für Elektromobilität, urbane Räume und Notfälle.
-    </p>
+  <h1>Mobile Energieversorgung</h1>
+  <p>
+    Ein skalierbares Projekt für urbane Notstromversorgung,
+    mobile Ladeinfrastruktur und autarke Energiesysteme – startend in kleinen Schritten.
+  </p>
+</section>
+
+<!-- PROJEKTÜBERBLICK -->
+<section>
+  <h2 style="text-align:center; margin-bottom:2rem; color: var(--accent);">Projektüberblick</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Vision</h3>
+      <p>
+        Ein flexibles, modulares System aus mobilen Batteriespeichern,
+        das Schritt für Schritt wächst und Städte sowie Verbraucher
+        in Zukunft vor Ausfällen schützt.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Warum jetzt?</h3>
+      <p>
+        Der Berliner Stromausfall hat gezeigt:
+        Urbane Gebiete benötigen flexible Energie-Backups.
+        Das Projekt hat aktuell höchsten gesellschaftlichen und wirtschaftlichen Mehrwert.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Skalierung</h3>
+      <p>
+        Start mit kleinem Pilotprojekt → Einnahmen generieren → Kapital reinvestieren
+        → Weiterer Ausbau bis hin zu Groß-Containern & Stadtversorgung.
+      </p>
+    </div>
   </div>
 </section>
 
-<!-- PROJEKTBESCHREIBUNG -->
+<!-- SCHRITT FÜR SCHRITT: DER WACHSTUMSPLAN -->
 <section>
-  <div class="grid">
-    <div class="card">
-      <h3>Projektbeschreibung</h3>
+  <h2 style="text-align:center; margin-bottom:2rem; color: var(--accent);">Schritt-für-Schritt Wachstumsplan</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-step">
+      <h3>1. Pilotprojekt: Mobile Pannenhilfe für E-Autos</h3>
       <p>
-        Das Projekt entwickelt mobile Batteriesysteme,
-        die Strom genau dort bereitstellen,
-        wo er temporär fehlt oder die Infrastruktur nicht ausreicht.
+        Ein kleines Einsatzfahrzeug mit Batterieeinheit bietet Notladungen im Stadtgebiet.
+        Sofort umsetzbar – perfekt für Testlauf, Kundenfeedback und erste Einnahmen.
       </p>
     </div>
 
-    <div class="card">
-      <h3>Problem</h3>
+    <div class="timeline-step">
+      <h3>2. Ausbau kleiner Akkustationen</h3>
       <p>
-        Ladeinfrastruktur ist nicht überall vorhanden.
-        Stromausfälle treten auch in Städten auf.
-        Feste Lösungen sind teuer, langsam und platzintensiv.
+        Transportierbare 5–10 kWh-Module für Events, Kleingewerbe oder Notstrom bei Haushalten.
+        Leicht zu vermieten → stabile Einnahmequelle.
       </p>
     </div>
 
-    <div class="card">
-      <h3>Lösung</h3>
+    <div class="timeline-step">
+      <h3>3. Mobile Akku-Container</h3>
       <p>
-        Mobile Energiespeicher, die flexibel eingesetzt werden können –
-        unabhängig vom Stromnetz, schnell verfügbar und skalierbar.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ANWENDUNGEN -->
-<section>
-  <div class="grid">
-    <div class="card">
-      <h3>🚗 Mobile Notladung</h3>
-      <p>
-        Kompakte Servicefahrzeuge unterstützen E-Autos
-        mit leerem Akku direkt vor Ort.
+        20–50 Fuß Container mit 100–500 kWh Speicherkapazität.
+        Versorgung größerer Anlagen, Einkaufszentren oder
+        kritischer Infrastruktur bei Ausfällen.
       </p>
     </div>
 
-    <div class="card">
-      <h3>📦 Akku-Container</h3>
+    <div class="timeline-step">
+      <h3>4. Städtische Notfallversorgung</h3>
       <p>
-        Mobile Batteriespeicher für Einkaufszentren,
-        Parkplätze oder Events – ohne feste Installation.
+        Großspeicher zur Überbrückung ganzer Wohnblöcke.
+        Kooperation mit Stadtwerken, Behörden & Krisenmanagement.
       </p>
     </div>
 
-    <div class="card">
-      <h3>❄️ Notstrom</h3>
-      <p>
-        Überbrückung bei Stromausfällen für Wohnungen,
-        Supermärkte und kritische Grundversorgung.
-      </p>
-    </div>
   </div>
 </section>
 
 <!-- BILDER -->
 <section>
+  <h2 style="text-align:center; margin-bottom:2rem; color: var(--accent);">Bilder & Konzeptdarstellungen</h2>
+
   <div class="grid">
     <div class="card image">
-      <img src="images/bild1.jpg" alt="Mobiles Ladefahrzeug">
-      <p>Mobiles Ladefahrzeug im urbanen Raum</p>
+      <img src="images/bild1.jpg" alt="">
+      <p>Kleines Pilotfahrzeug für mobile Notladungen.</p>
     </div>
 
     <div class="card image">
-      <img src="images/bild2.jpg" alt="Winter Notladung">
-      <p>Notladung im Winter bei leerem Akku</p>
+      <img src="images/bild2.jpg" alt="">
+      <p>Winterbetrieb: Einsätze bei Kälte & Energieengpässen.</p>
     </div>
 
     <div class="card image">
-      <img src="images/bild3.jpg" alt="Akku Container">
-      <p>Akku-Container zur temporären Stromversorgung</p>
+      <img src="images/bild3.jpg" alt="">
+      <p>Containerlösung für skalierbare Versorgung.</p>
     </div>
   </div>
 </section>
@@ -189,27 +228,25 @@ footer {
 <section>
   <div class="grid">
     <div class="card">
-      <h3>Ziel</h3>
+      <h3>Endziel</h3>
       <p>
-        Aufbau eines flexiblen Systems zur mobilen Energieversorgung,
-        das Infrastruktur ergänzt, Stromausfälle überbrückt
-        und urbane Räume nachhaltig entlastet.
+        Eine vollständig mobile, skalierbare Energieinfrastruktur,
+        die Städte widerstandsfähiger macht, neue Einnahmemodelle schafft
+        und flexible Lösungen für die Energiewirtschaft bietet.
       </p>
     </div>
   </div>
 </section>
 
 <footer>
-  © 2026 – Mobile Energieversorgung auf Batteriebasis
+  © 2026 – Projekt Mobile Energieversorgung
 </footer>
 
 <script>
 const cards = document.querySelectorAll('.card');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
 }, { threshold: 0.2 });
 
