@@ -1,164 +1,175 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mobile Batterie-Tankstelle | Veyfkon</title>
-  <meta name="description" content="Mobile Batterie-Tankstelle: Abholung leerer Batterien, effizientes Laden im Container, Rücklieferung & Notfall-EV-Lade-Service in München." />
-  <style>
-    :root{--accent:#0f766e;--accent-2:#06b6d4;--bg:#0f172a;--muted:#94a3b8}
-    *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:0;color:#0b1220;background:#f8fafc}
-    header{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:36px 20px}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    h1{margin:0 0 8px;font-size:28px}
-    p.lead{margin:0;color:rgba(255,255,255,0.95)}
-    nav{display:flex;gap:12px;align-items:center;margin-top:16px}
-    a.btn{background:white;color:var(--accent);padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
-    main{padding:36px 20px}
-    .grid{display:grid;grid-template-columns:1fr;gap:20px}
-    @media(min-width:900px){.grid{grid-template-columns:1fr 420px}}
-    .card{background:white;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(11,18,32,0.06)}
-    .features{display:grid;grid-template-columns:1fr;gap:12px}
-    @media(min-width:700px){.features{grid-template-columns:repeat(2,1fr)}}
-    label{display:block;font-size:14px;margin-bottom:6px;color:#0b1220}
-    input,textarea,select{width:100%;padding:10px;border:1px solid #e6eef6;border-radius:8px;font-size:14px}
-    button.primary{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;border:0;font-weight:700}
-    footer{padding:28px 20px;background:#0b1220;color:#cbd5e1}
-    .muted{color:var(--muted);font-size:14px}
-    .small{font-size:13px}
-    .pill{display:inline-block;background:#eef2ff;color:#334155;padding:6px 8px;border-radius:999px;font-weight:600}
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EnergyVision – Dezentrales Stromsystem</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0a0f1c;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+        }
+
+        header h1 {
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        header nav a {
+            margin-left: 25px;
+            color: #6bdcff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .hero {
+            height: 90vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(10,15,28,1)),
+                        url('DEIN-BILD-HIER.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 58px;
+            text-shadow: 0 0 20px rgba(0,255,255,0.5);
+            animation: fadeIn 2s ease forwards;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-top: 20px;
+            max-width: 700px;
+            animation: fadeIn 2.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        section {
+            padding: 80px 40px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #6bdcff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #6bdcff;
+            box-shadow: 0 0 20px rgba(0,255,255,0.2);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            margin-top: 60px;
+        }
+    </style>
+
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-        <div>
-          <h1>Mobile Batterie‑Tankstelle — Veyfkon</h1>
-          <p class="lead">Wir holen leere Batterien ab, liefern sie vollgeladen zurück und bieten Notfall-Ladungen für liegengebliebene E-Autos direkt vor Ort.</p>
-        </div>
-        <nav>
-          <a class="btn" href="#pilot">Pilot anfragen</a>
-          <a class="btn" href="#kontakt">Kontakt</a>
-        </nav>
-      </div>
-    </div>
-  </header>
 
-  <main class="container">
+<header>
+    <h1>EnergyVision</h1>
+    <nav>
+        <a href="#modules">Module</a>
+        <a href="#tech">Technik</a>
+        <a href="#vision">Vision</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <div>
+        <h2>Die Zukunft der Energie beginnt heute</h2>
+        <p>Modulare Batteriesysteme für Haushalte, Häuser und ganze Stadtteile – inspiriert durch den Stromausfall in Berlin.</p>
+    </div>
+</div>
+
+<section id="modules">
+    <h2 class="section-title">Energie-Module</h2>
+
     <div class="grid">
-      <section>
+
         <div class="card">
-          <h2>Was wir anbieten</h2>
-          <div class="features" style="margin-top:12px">
-            <div>
-              <h3>📦 Container‑Ladestation</h3>
-              <p class="small muted">Mobiler Container mit Ladeeinheiten für USV, Industrieakkus und EVs. Sicher, überwacht und skalierbar.</p>
-            </div>
-            <div>
-              <h3>🚚 Abholung & Lieferung</h3>
-              <p class="small muted">Wir holen leere Batterien ab, laden sie effizient und liefern sie vollgeladen zurück. Auch liegengebliebene E-Autos werden direkt vor Ort geladen.</p>
-            </div>
-            <div>
-              <h3>⚡ Notfall‑EV‑Ladung</h3>
-              <p class="small muted">Mobile Schnelllade-Einheit für E-Fahrzeuge, die liegengeblieben sind oder kurzfristig Energie benötigen.</p>
-            </div>
-            <div>
-              <h3>🧪 Tests & Second‑Life</h3>
-              <p class="small muted">Batterieprüfung, Dokumentation und Aufbereitung für Second-Life-Einsätze – wirtschaftlich & nachhaltig.</p>
-            </div>
-          </div>
+            <img src="DEIN-BILD-HIER-1.jpg" alt="Wohnungsmodul">
+            <h3>Wohnungsmodul</h3>
+            <p>1–3 kWh für Mieter – kompakt, sicher, leise. Ideal als Notstrom oder Solar-Zusatzspeicher.</p>
         </div>
 
-        <div class="card" style="margin-top:16px">
-          <h2>Warum das jetzt Sinn macht</h2>
-          <ul>
-            <li class="small muted">Viele KMUs und Werkstätten haben keine eigene Ladeinfrastruktur.</li>
-            <li class="small muted">Container‑Ansatz ist kosteneffizient, mobil und skalierbar.</li>
-            <li class="small muted">Mit einem Reisegewerbeschein kannst du schnell testen und starten.</li>
-          </ul>
-        </div>
-
-        <div class="card" id="pilot" style="margin-top:16px">
-          <h2>Pilotanfrage</h2>
-          <p class="small muted">Trage deine Firma oder deinen Bedarf ein — wir melden uns mit einem Pilotangebot für München.</p>
-          <form id="pilotForm" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="return validatePilot()">
-            <label for="name">Name / Firma *</label>
-            <input id="name" name="name" type="text" required />
-
-            <label for="email">E‑Mail *</label>
-            <input id="email" name="email" type="email" value="seyfi.volkan@outlook.com" required />
-
-            <label for="type">Was möchten Sie testen?</label>
-            <select id="type" name="type">
-              <option>USV‑Akkus</option>
-              <option>Industriebatterien</option>
-              <option>EV‑Notladung</option>
-              <option>Second‑Life</option>
-            </select>
-
-            <label for="message">Kurzbeschreibung (Anzahl, Standort, Zeitrahmen)</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-
-            <input type="hidden" name="_subject" value="Pilotanfrage: Mobile Batterie‑Tankstelle" />
-            <button class="primary" type="submit">Pilot anfragen</button>
-          </form>
-          <p class="muted small" style="margin-top:10px">Hinweis: Ersetze die Formspree‑URL mit deiner eigenen Formspree‑ID.</p>
-        </div>
-      </section>
-
-      <aside>
         <div class="card">
-          <h3>Interessierte Partner</h3>
-          <p class="small muted">Wir freuen uns über Gespräche mit Personen und Unternehmen, die unsere Vision teilen und sich für innovative Energie- und Mobilitätslösungen begeistern. Wenn Sie neugierig sind, melden Sie sich gerne.</p>
-          <div style="display:flex;gap:8px;margin-top:12px">
-            <a class="pill" href="#kontakt">Kontakt aufnehmen</a>
-            <a class="pill" href="#pilot">Pilotanfrage</a>
-          </div>
+            <img src="DEIN-BILD-HIER-2.jpg" alt="Hausmodul">
+            <h3>Hausmodul</h3>
+            <p>5–15 kWh Speicher für Häuser. Perfekt für Solaranlagen oder autarke Stromversorgung.</p>
         </div>
 
-        <div class="card" style="margin-top:16px">
-          <h3>So funktioniert's (Kurz)</h3>
-          <ol class="small muted">
-            <li>Du buchst Abholung oder bringst Batterien / Fahrzeuge zum Container.</li>
-            <li>Wir prüfen & laden – dokumentieren Kapazität & Sicherheit.</li>
-            <li>Ausgelieferte Batterien und Fahrzeuge sind wieder einsatzbereit; auf Wunsch Second‑Life‑Optionen.</li>
-          </ol>
+        <div class="card">
+            <img src="DEIN-BILD-HIER-3.jpg" alt="Container">
+            <h3>Energy Container</h3>
+            <p>Bis zu 5 MWh Kapazität. Kann ganze Wohnblöcke oder 1.500 Haushalte im Notfall versorgen.</p>
         </div>
 
-        <div class="card" style="margin-top:16px" id="kontakt">
-          <h3>Kontakt</h3>
-          <p class="small muted">Interessiert? Ruf uns an oder schreib uns — wir melden uns innerhalb von 2 Werktagen.</p>
-          <p class="small"><strong>Veyfkon / Seyfi Volkan</strong><br/>München · Reisegewerbe</p>
-          <p class="small">E‑Mail: <a href="mailto:seyfi.volkan@outlook.com">seyfi.volkan@outlook.com</a><br/>Tel: +49 163 2229705</p>
-        </div>
-      </aside>
     </div>
+</section>
 
-    <div style="margin-top:20px;text-align:center">
-      <p class="muted small">Diese Seite ist vorbereitet, um Interessenten und mögliche Partner dezent über das Projekt zu informieren.</p>
-    </div>
-  </main>
+<section id="vision">
+    <h2 class="section-title">Unsere Vision</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+        Energie soll sicher, sauber und jederzeit verfügbar sein.  
+        Unser System schützt Menschen bei Stromausfällen, entlastet das Stromnetz 
+        und ermöglicht eine neue Art der dezentralen Energieversorgung.
+    </p>
+</section>
 
-  <footer>
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
-      <div>
-        <strong>Veyfkon</strong> — Mobile Batterie‑Tankstelle • München
-        <div class="muted small">Impressum / Datenschutz bei Veröffentlichung ergänzen</div>
-      </div>
-      <div class="muted small">© "Veyfkon" 2025</div>
-    </div>
-  </footer>
+<footer>
+    © 2026 EnergyVision — Dezentrale Energiesysteme der Zukunft
+</footer>
 
-  <script>
-    function validatePilot(){
-      const name=document.getElementById('name').value.trim();
-      const email=document.getElementById('email').value.trim();
-      if(!name||!email){alert('Bitte Name und E‑Mail ausfüllen.');return false}
-      alert('Danke — deine Pilotanfrage wird gesendet (Formspree ID zuvor anpassen).');
-      return true;
-    }
-  </script>
 </body>
 </html>
