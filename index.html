@@ -1,184 +1,219 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mobile Energieversorgung</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Energieversorgung</title>
 
-  <style>
-    :root {
-      --bg: #0b0f14;
-      --card: #121826;
-      --accent: #4fd1c5;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-    }
+<style>
+:root {
+  --bg: #0a0f1a;
+  --card: #111827;
+  --accent: #38f2d6;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", system-ui, sans-serif;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+}
 
-    body {
-      background: radial-gradient(circle at top, #101827, var(--bg));
-      color: var(--text);
-      line-height: 1.6;
-    }
+body {
+  background: radial-gradient(circle at top, #0f172a, var(--bg));
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    header {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      animation: fadeIn 1.5s ease;
-    }
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 4rem 1.5rem;
+}
 
-    header h1 {
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      margin-bottom: 1rem;
-    }
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
 
-    header p {
-      color: var(--muted);
-      max-width: 600px;
-      margin: auto;
-    }
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
 
-    section {
-      padding: 4rem 1.5rem;
-      max-width: 1200px;
-      margin: auto;
-    }
+.hero p {
+  color: var(--muted);
+  max-width: 700px;
+  margin: auto;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
 
-    .card {
-      background: linear-gradient(145deg, #131a2a, var(--card));
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      transform: translateY(20px);
-      opacity: 0;
-      transition: all 0.6s ease;
-    }
+.card {
+  background: linear-gradient(145deg, #0f172a, var(--card));
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s ease;
+}
 
-    .card.visible {
-      transform: translateY(0);
-      opacity: 1;
-    }
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .card h3 {
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
+.card h3 {
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
 
-    .card p {
-      color: var(--muted);
-    }
+.image img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+}
 
-    .image-card img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 1rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<!-- HERO -->
+<section class="hero">
   <div>
     <h1>Mobile Energieversorgung</h1>
     <p>
-      Flexible Stromlösungen für Elektromobilität, Notfälle und urbane Räume –
-      genau dort, wo Energie gerade fehlt.
+      Flexible Stromlösungen auf Batteriebasis –  
+      für Elektromobilität, urbane Räume und Notfälle.
     </p>
   </div>
-</header>
+</section>
 
+<!-- PROJEKTBESCHREIBUNG -->
+<section>
+  <div class="grid">
+    <div class="card">
+      <h3>Projektbeschreibung</h3>
+      <p>
+        Das Projekt entwickelt mobile Batteriesysteme,
+        die Strom genau dort bereitstellen,
+        wo er temporär fehlt oder die Infrastruktur nicht ausreicht.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Problem</h3>
+      <p>
+        Ladeinfrastruktur ist nicht überall vorhanden.
+        Stromausfälle treten auch in Städten auf.
+        Feste Lösungen sind teuer, langsam und platzintensiv.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Lösung</h3>
+      <p>
+        Mobile Energiespeicher, die flexibel eingesetzt werden können –
+        unabhängig vom Stromnetz, schnell verfügbar und skalierbar.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ANWENDUNGEN -->
 <section>
   <div class="grid">
     <div class="card">
       <h3>🚗 Mobile Notladung</h3>
       <p>
-        Kompakte Fahrzeuge versorgen E-Autos mit leerem Akku direkt vor Ort –
-        schnell, leise und ohne Abschleppen.
+        Kompakte Servicefahrzeuge unterstützen E-Autos
+        mit leerem Akku direkt vor Ort.
       </p>
     </div>
 
     <div class="card">
       <h3>📦 Akku-Container</h3>
       <p>
-        Große Batteriespeicher für Parkplätze, Einkaufszentren oder Events –
-        ohne festen Netzanschluss.
+        Mobile Batteriespeicher für Einkaufszentren,
+        Parkplätze oder Events – ohne feste Installation.
       </p>
     </div>
 
     <div class="card">
-      <h3>❄️ Stromausfälle</h3>
+      <h3>❄️ Notstrom</h3>
       <p>
-        Notstrom für Wohnungen, Supermärkte und kritische Infrastruktur
-        bei lokalen Ausfällen.
+        Überbrückung bei Stromausfällen für Wohnungen,
+        Supermärkte und kritische Grundversorgung.
       </p>
     </div>
   </div>
 </section>
 
+<!-- BILDER -->
 <section>
   <div class="grid">
-    <div class="card image-card">
+    <div class="card image">
       <img src="images/bild1.jpg" alt="Mobiles Ladefahrzeug">
-      <p>Mobiles Servicefahrzeug im Einsatz</p>
+      <p>Mobiles Ladefahrzeug im urbanen Raum</p>
     </div>
 
-    <div class="card image-card">
+    <div class="card image">
       <img src="images/bild2.jpg" alt="Winter Notladung">
       <p>Notladung im Winter bei leerem Akku</p>
     </div>
 
-    <div class="card image-card">
+    <div class="card image">
       <img src="images/bild3.jpg" alt="Akku Container">
-      <p>Stationärer Akku-Container im urbanen Raum</p>
+      <p>Akku-Container zur temporären Stromversorgung</p>
+    </div>
+  </div>
+</section>
+
+<!-- ZIEL -->
+<section>
+  <div class="grid">
+    <div class="card">
+      <h3>Ziel</h3>
+      <p>
+        Aufbau eines flexiblen Systems zur mobilen Energieversorgung,
+        das Infrastruktur ergänzt, Stromausfälle überbrückt
+        und urbane Räume nachhaltig entlastet.
+      </p>
     </div>
   </div>
 </section>
 
 <footer>
-  © 2026 – Projekt: Mobile Energieversorgung auf Batteriebasis
+  © 2026 – Mobile Energieversorgung auf Batteriebasis
 </footer>
 
 <script>
-  const cards = document.querySelectorAll('.card');
+const cards = document.querySelectorAll('.card');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.2 });
-
-  cards.forEach(card => observer.observe(card));
+cards.forEach(card => observer.observe(card));
 </script>
 
 </body>
