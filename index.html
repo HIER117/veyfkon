@@ -1,231 +1,185 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projektpräsentation – Dezentrales Energiesystem</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mobile Energieversorgung</title>
 
-<style>
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', Arial, sans-serif;
-        background: #0a0f1c;
-        color: #e6f1ff;
-        overflow-x: hidden;
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #121826;
+      --accent: #4fd1c5;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
     }
 
-    /* Header */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #101827, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+    }
+
     header {
-        padding: 40px 40px;
-        text-align: center;
-        background: rgba(0,0,0,0.3);
-        backdrop-filter: blur(10px);
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      animation: fadeIn 1.5s ease;
     }
 
     header h1 {
-        font-size: 34px;
-        letter-spacing: 2px;
-        margin: 0;
-        color: #6bdcff;
-        text-shadow: 0 0 10px rgba(0,255,255,0.3);
-        animation: fadeIn 1.5s ease forwards;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to   { opacity: 1; transform: translateY(0); }
+    header p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: auto;
     }
 
-    @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to   { opacity: 1; transform: translateY(0); }
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    /* Main Content */
-    main {
-        max-width: 900px;
-        margin: 50px auto;
-        padding: 0 20px;
-        animation: fadeUp 1.5s ease forwards;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
 
-    h2 {
-        color: #6bdcff;
-        font-size: 28px;
-        border-left: 4px solid #6bdcff;
-        padding-left: 12px;
-        margin-top: 60px;
-        margin-bottom: 20px;
-        text-shadow: 0 0 8px rgba(0,255,255,0.2);
-    }
-
-    p, li {
-        color: #cfe9ff;
-        line-height: 1.6;
-        font-size: 17px;
-    }
-
-    ul {
-        margin-top: 10px;
-    }
-
-    /* Card Section */
     .card {
-        background: rgba(255,255,255,0.05);
-        border: 1px solid rgba(255,255,255,0.1);
-        padding: 25px;
-        border-radius: 14px;
-        margin: 20px 0;
-        backdrop-filter: blur(10px);
-        transition: .3s;
+      background: linear-gradient(145deg, #131a2a, var(--card));
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.6s ease;
     }
 
-    .card:hover {
-        border-color: #6bdcff;
-        box-shadow: 0 0 20px rgba(0,255,255,0.25);
-        transform: translateY(-6px);
+    .card.visible {
+      transform: translateY(0);
+      opacity: 1;
     }
 
-    /* Timeline */
-    .timeline {
-        background: rgba(255,255,255,0.05);
-        padding: 20px;
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 12px;
-        margin-top: 10px;
-        backdrop-filter: blur(10px);
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
     }
 
-    .timeline div {
-        margin-bottom: 12px;
+    .card p {
+      color: var(--muted);
     }
 
-    /* Footer */
+    .image-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
     footer {
-        margin-top: 80px;
-        padding: 20px;
-        text-align: center;
-        font-size: 14px;
-        color: #7aa0c4;
-        border-top: 1px solid rgba(255,255,255,0.1);
-        background: rgba(0,0,0,0.2);
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
-</style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <h1>Projektpräsentation<br>Dezentrales Batterie- und Energiesystem</h1>
+  <div>
+    <h1>Mobile Energieversorgung</h1>
+    <p>
+      Flexible Stromlösungen für Elektromobilität, Notfälle und urbane Räume –
+      genau dort, wo Energie gerade fehlt.
+    </p>
+  </div>
 </header>
 
-<main>
+<section>
+  <div class="grid">
+    <div class="card">
+      <h3>🚗 Mobile Notladung</h3>
+      <p>
+        Kompakte Fahrzeuge versorgen E-Autos mit leerem Akku direkt vor Ort –
+        schnell, leise und ohne Abschleppen.
+      </p>
+    </div>
 
-    <section>
-        <h2>1. Projektüberblick</h2>
-        <div class="card">
-            <p>
-                Das Projekt entwickelt ein modulares, skalierbares Energiespeichersystem für Haushalte,
-                Häuser und komplette Wohnanlagen. Ziel ist eine sichere, autonome Stromversorgung, 
-                die besonders bei regionalen Ausfällen – wie dem Stromausfall in Berlin – zuverlässigen Schutz bietet.
-            </p>
-        </div>
-    </section>
+    <div class="card">
+      <h3>📦 Akku-Container</h3>
+      <p>
+        Große Batteriespeicher für Parkplätze, Einkaufszentren oder Events –
+        ohne festen Netzanschluss.
+      </p>
+    </div>
 
-    <section>
-        <h2>2. Problemstellung</h2>
-        <div class="card">
-            <p>
-                Zunehmende Stromausfälle legen Haushalte, Kommunikation, Transport und Heizung lahm. 
-                Die vorhandene Infrastruktur bietet kaum Notstromlösungen – insbesondere nicht für 
-                Mehrfamilienhäuser oder ganze Wohnviertel.
-            </p>
-        </div>
-    </section>
+    <div class="card">
+      <h3>❄️ Stromausfälle</h3>
+      <p>
+        Notstrom für Wohnungen, Supermärkte und kritische Infrastruktur
+        bei lokalen Ausfällen.
+      </p>
+    </div>
+  </div>
+</section>
 
-    <section>
-        <h2>3. Projektziel</h2>
-        <div class="card">
-            <ul>
-                <li>Sichere Notstromversorgung für einzelne Haushalte und Wohnblöcke</li>
-                <li>Modulare Batteriemodule von 1 kWh bis 5 MWh</li>
-                <li>Mobile Energieversorgung (z. B. Fahrzeugmodule)</li>
-                <li>Solarintegration möglich</li>
-                <li>Skalierbare Containerlösungen für Infrastruktur</li>
-            </ul>
-        </div>
-    </section>
+<section>
+  <div class="grid">
+    <div class="card image-card">
+      <img src="images/bild1.jpg" alt="Mobiles Ladefahrzeug">
+      <p>Mobiles Servicefahrzeug im Einsatz</p>
+    </div>
 
-    <section>
-        <h2>4. Nutzen & gesellschaftlicher Mehrwert</h2>
-        <div class="card">
-            <ul>
-                <li>Erhöhte Versorgungssicherheit für Bevölkerung</li>
-                <li>Notbetrieb für Heizung, Kommunikation, Licht und Grundversorgung</li>
-                <li>Entlastung des Stromnetzes</li>
-                <li>Nutzung erneuerbarer Energie effizienter</li>
-                <li>Einsatzfähig im Katastrophenschutz</li>
-            </ul>
-        </div>
-    </section>
+    <div class="card image-card">
+      <img src="images/bild2.jpg" alt="Winter Notladung">
+      <p>Notladung im Winter bei leerem Akku</p>
+    </div>
 
-    <section>
-        <h2>5. Systemmodule</h2>
-        <div class="card">
-            <ul>
-                <li><b>Wohnungsmodul:</b> 1–3 kWh Energiespeicher</li>
-                <li><b>Hausmodul:</b> 5–15 kWh Energiespeicher</li>
-                <li><b>Fahrzeugmodul:</b> Mobile Notstromversorgung</li>
-                <li><b>Energy-Container:</b> 500 kWh – 5 MWh Kapazität</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>6. Haushalte pro Container</h2>
-        <div class="card">
-            <ul>
-                <li><b>500 kWh Container:</b> 50 Haushalte (1 Tag Notversorgung)</li>
-                <li><b>1–2 MWh Container:</b> 150–600 Haushalte</li>
-                <li><b>5 MWh Container:</b> bis zu 1.600 Haushalte (Notstrom, 1 Tag)</li>
-                <li>Vollversorgung möglich für 350–500 Haushalte (1 Tag)</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>7. Projektzeitplan</h2>
-        <div class="timeline">
-            <div><b>Phase 1 – Konzept (2–3 Wochen):</b> Marktanalyse, Anforderungen, Design</div>
-            <div><b>Phase 2 – Entwicklung (6–8 Wochen):</b> Prototypenbau, Batterietechnologie, Testläufe</div>
-            <div><b>Phase 3 – Sicherheit (4 Wochen):</b> Zertifizierung, Belastungstests</div>
-            <div><b>Phase 4 – Produktion (6 Wochen):</b> Herstellerwahl, Serienfertigung</div>
-        </div>
-        <p><b>Gesamtdauer:</b> ca. 4–5 Monate</p>
-    </section>
-
-    <section>
-        <h2>8. Zukunftsperspektive</h2>
-        <div class="card">
-            <p>
-                Das System ist skalierbar und kann zukünftig in Richtung Smart-Grid, 
-                kommunale Energiekonzepte, Katastrophenschutz, Ladeinfrastruktur 
-                und dezentrale Energieautarkie weiterentwickelt werden.
-            </p>
-        </div>
-    </section>
-
-</main>
+    <div class="card image-card">
+      <img src="images/bild3.jpg" alt="Akku Container">
+      <p>Stationärer Akku-Container im urbanen Raum</p>
+    </div>
+  </div>
+</section>
 
 <footer>
-    Projektpräsentation – Dezentrales Energiesystem © 2026
+  © 2026 – Projekt: Mobile Energieversorgung auf Batteriebasis
 </footer>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+</script>
 
 </body>
 </html>
