@@ -1,221 +1,188 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>VEYFKON – Horizontal Pitch (Text links / Bild rechts)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VEYFKON Pitch</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
-  body{
-    font-family:"Inter",system-ui,Segoe UI,Roboto,Arial;
-    background:#07101a;color:#e6eef6;overflow:hidden;
-  }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-  .logo{position:fixed;left:32px;top:28px;color:#38bdf8;font-weight:700;letter-spacing:2px;z-index:20}
-  .hint{position:fixed;right:32px;bottom:24px;color:rgba(255,255,255,0.25);font-size:13px;z-index:20}
+body{
+    font-family:'Inter',sans-serif;
+    background:#0c111d;
+    color:#f1f5f9;
+    overflow:hidden;
+}
 
-  /* Slider */
-  #viewport{width:100vw;height:100vh;overflow:hidden;position:relative}
-  .wrapper{display:flex;height:100%;transition:transform .7s cubic-bezier(.22,.9,.25,1)}
-  .slide{width:100vw;height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:64px 6%;gap:40px;border-right:1px solid rgba(255,255,255,0.03)}
-  /* left column = text, right = image */
-  .left{max-width:760px}
-  .right{display:flex;align-items:center;justify-content:center}
-  h1{font-size:44px;color:#38bdf8;margin-bottom:12px}
-  h2{font-size:30px;color:#9fe6ff;margin-bottom:14px}
-  p,li{font-size:18px;color:#dbeef6;line-height:1.6}
-  ul{list-style:none}
-  ul li::before{content:"— ";color:#38bdf8;margin-right:6px}
+.wrapper{
+    display:flex;
+    width:800vw;
+    height:100vh;
+    transition:transform 0.8s ease;
+}
 
-  .placeholder{
-    width:100%;
-    height:64vh;
-    max-height:760px;
-    border-radius:12px;
-    background:linear-gradient(180deg, rgba(56,189,248,0.06), rgba(56,189,248,0.03));
-    border:2px dashed rgba(56,189,248,0.18);
-    display:flex;align-items:center;justify-content:center;color:rgba(56,189,248,0.7);
-    font-size:15px;padding:18px;text-align:center;
-  }
-  .placeholder img{max-width:100%;max-height:100%;border-radius:10px;object-fit:cover;display:block}
+.slide{
+    width:100vw;
+    height:100vh;
+    padding:80px 10%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
 
-  /* arrows */
-  .controls{position:fixed;left:50%;transform:translateX(-50%);bottom:18px;display:flex;gap:18px;z-index:30}
-  .btn{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:8px;color:#e6f8ff;cursor:pointer;font-weight:600}
-  .btn:active{transform:translateY(1px)}
+.left{
+    width:50%;
+}
 
-  @media (max-width:900px){
-    .slide{grid-template-columns:1fr;gap:20px;padding:36px;}
-    .placeholder{height:40vh}
-    h1{font-size:28px}
-    h2{font-size:22px}
-  }
+.right{
+    width:40%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+h1,h2{
+    font-weight:600;
+    margin-bottom:30px;
+    color:#38bdf8;
+}
+
+ul{
+    list-style:none;
+}
+
+li{
+    margin-bottom:20px;
+    font-size:20px;
+    opacity:0;
+    transform:translateY(10px);
+    transition:all 0.5s ease;
+}
+
+li.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.placeholder{
+    width:420px;
+    height:260px;
+    border:2px dashed rgba(56,189,248,0.5);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    color:#38bdf8;
+    opacity:0.5;
+}
+
+.logo{
+    position:fixed;
+    top:30px;
+    left:40px;
+    font-weight:700;
+    letter-spacing:2px;
+    color:#38bdf8;
+}
+
 </style>
 </head>
 <body>
 
 <div class="logo">VEYFKON</div>
-<div class="hint">Use ← → or click arrows</div>
 
-<div id="viewport">
-  <div class="wrapper" id="slider">
+<div class="wrapper" id="slider">
 
-    <!-- Slide 1 -->
-    <section class="slide">
-      <div class="left">
-        <h1>Mobiles Batterie-Versorgungssystem</h1>
-        <p style="margin-bottom:18px">Flexible Energie für urbane E-Mobilität — kompakt starten, global denken.</p>
-        <p style="font-weight:600;color:#cfeffb">Volkan Seyfi · 2026</p>
-      </div>
-      <div class="right">
-        <div class="placeholder">
-          <img src="img/slide1.jpg" alt="Titelbild (ersetzen)"/>
-          <!-- falls kein Bild vorhanden, bleibt der Rahmen als Platzhalter sichtbar -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 2 -->
-    <section class="slide">
-      <div class="left">
-        <h2>Problem</h2>
+<!-- Slide 1 -->
+<div class="slide">
+    <div class="left">
+        <h1>Mobile Energy System</h1>
         <ul>
-          <li>E-Autos bleiben liegen</li>
-          <li>Carsharing-Fahrzeuge blockieren Einsatzfähigkeit</li>
-          <li>Ladeinfrastruktur deckt urbanen Bedarf nicht vollständig</li>
+            <li>Flexible Energie für E-Mobilität</li>
+            <li>Sofort einsatzbereit</li>
+            <li>Skalierbares Versorgungssystem</li>
         </ul>
-      </div>
-      <div class="right">
-        <div class="placeholder"><img src="img/slide2.jpg" alt="Urbanes Szenario (ersetzen)"/></div>
-      </div>
-    </section>
-
-    <!-- Slide 3 -->
-    <section class="slide">
-      <div class="left">
-        <h2>Solution</h2>
-        <ul>
-          <li>Mobile Batterieeinheiten (Lastenrad, Fahrzeug, Container)</li>
-          <li>Vor-Ort-Versorgung & Notladung</li>
-          <li>Skalierbar: Fahrrad → Flotte → Container</li>
-        </ul>
-      </div>
-      <div class="right">
-        <div class="placeholder"><img src="img/slide3.jpg" alt="Systemgrafik (ersetzen)"/></div>
-      </div>
-    </section>
-
-    <!-- Slide 4 -->
-    <section class="slide">
-      <div class="left">
-        <h2>Market</h2>
-        <ul>
-          <li>Carsharing als Haupt-B2B-Kunde</li>
-          <li>Zunehmende E-Mobilitätsflotten in Städten</li>
-          <li>Hoher Bedarf an flexibler Ladeunterstützung</li>
-        </ul>
-      </div>
-      <div class="right">
-        <div class="placeholder"><img src="img/slide4.jpg" alt="Markt / Diagramm (ersetzen)"/></div>
-      </div>
-    </section>
-
-    <!-- Slide 5 -->
-    <section class="slide">
-      <div class="left">
-        <h2>Business Model</h2>
-        <ul>
-          <li>Servicegebühr pro Einsatz</li>
-          <li>B2B-Verträge & Koops mit Carsharing</li>
-          <li>Langfristig: Vermietung & Pfand-Container</li>
-        </ul>
-      </div>
-      <div class="right">
-        <div class="placeholder"><img src="img/slide5.jpg" alt="Revenue (ersetzen)"/></div>
-      </div>
-    </section>
-
-    <!-- Slide 6 -->
-    <section class="slide">
-      <div class="left">
-        <h2>Traction</h2>
-        <ul>
-          <li>Konzept ausgearbeitet</li>
-          <li>Einladung zum Pitch erhalten</li>
-          <li>Erste Kooperationsgespräche angestoßen</li>
-        </ul>
-      </div>
-      <div class="right">
-        <div class="placeholder"><img src="img/slide6.jpg" alt="Traction (ersetzen)"/></div>
-      </div>
-    </section>
-
-    <!-- Slide 7 -->
-    <section class="slide">
-      <div class="left">
-        <h2>Vision</h2>
-        <p>Übergangslösung, die heute hilft, bis neue Technologien reifen — und morgen global einsetzbar ist.</p>
-      </div>
-      <div class="right">
-        <div class="placeholder"><img src="img/slide7.jpg" alt="Vision (ersetzen)"/></div>
-      </div>
-    </section>
-
-    <!-- Slide 8 -->
-    <section class="slide">
-      <div class="left">
-        <h2>What I Need</h2>
-        <ul>
-          <li>Mentoring & strukturiertes Feedback</li>
-          <li>Technische & wirtschaftliche Validierung</li>
-          <li>Netzwerkzugang & Unterstützung beim Teamaufbau</li>
-        </ul>
-      </div>
-      <div class="right">
-        <div class="placeholder"><img src="img/slide8.jpg" alt="Support (ersetzen)"/></div>
-      </div>
-    </section>
-
-  </div>
+    </div>
+    <div class="right">
+        <div class="placeholder">Titelbild / Konzept</div>
+    </div>
 </div>
 
-<!-- Controls -->
-<div class="controls" style="display:flex;justify-content:center">
-  <button class="btn" id="prev">&larr; Prev</button>
-  <button class="btn" id="next">Next &rarr;</button>
+<!-- Slide 2 -->
+<div class="slide">
+    <div class="left">
+        <h2>Problem</h2>
+        <ul>
+            <li>Carsharing-Fahrzeuge bleiben liegen</li>
+            <li>Ladeinfrastruktur nicht flächendeckend</li>
+            <li>Standzeit = Umsatzverlust</li>
+        </ul>
+    </div>
+    <div class="right">
+        <div class="placeholder">Urbanes Szenario</div>
+    </div>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide">
+    <div class="left">
+        <h2>Solution</h2>
+        <ul>
+            <li>Mobile Batterieeinheit</li>
+            <li>Vor-Ort-Energieversorgung</li>
+            <li>B2B-Modell für Flotten</li>
+        </ul>
+    </div>
+    <div class="right">
+        <div class="placeholder">Systemgrafik</div>
+    </div>
+</div>
+
 </div>
 
 <script>
-  const slider = document.getElementById('slider');
-  const total = document.querySelectorAll('.slide').length;
-  let pos = 0; // 0..total-1; sliding to left increases pos
 
-  function update() {
-    slider.style.transform = `translateX(-${pos * 100}vw)`;
-  }
+let slideIndex = 0;
+let pointIndex = 0;
 
-  document.getElementById('next').addEventListener('click', ()=>{ if(pos < total-1) pos++; update(); });
-  document.getElementById('prev').addEventListener('click', ()=>{ if(pos > 0) pos--; update(); });
+const slides = document.querySelectorAll(".slide");
+const slider = document.getElementById("slider");
 
-  document.addEventListener('keydown', e=>{
-    if(e.key === 'ArrowRight'){ if(pos < total-1) pos++; update(); }
-    if(e.key === 'ArrowLeft'){ if(pos > 0) pos--; update(); }
-  });
+function showNextPoint(){
+    const points = slides[slideIndex].querySelectorAll("li");
 
-  // optional: swipe support for touch
-  let startX = null;
-  slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
-  slider.addEventListener('touchend', e => {
-    if(startX === null) return;
-    const endX = e.changedTouches[0].clientX;
-    const diff = startX - endX;
-    if(diff > 40 && pos < total-1) pos++;
-    if(diff < -40 && pos > 0) pos--;
-    update();
-    startX = null;
-  });
+    if(pointIndex < points.length){
+        points[pointIndex].classList.add("visible");
+        pointIndex++;
+    } else {
+        if(slideIndex < slides.length - 1){
+            slideIndex++;
+            slider.style.transform = `translateX(-${slideIndex * 100}vw)`;
+            pointIndex = 0;
+        }
+    }
+}
+
+function showPrevSlide(){
+    if(slideIndex > 0){
+        slideIndex--;
+        slider.style.transform = `translateX(-${slideIndex * 100}vw)`;
+        pointIndex = slides[slideIndex].querySelectorAll("li").length;
+    }
+}
+
+document.addEventListener("keydown", e => {
+    if(e.key === "ArrowRight"){
+        showNextPoint();
+    }
+    if(e.key === "ArrowLeft"){
+        showPrevSlide();
+    }
+});
+
 </script>
 
 </body>
