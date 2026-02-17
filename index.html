@@ -5,49 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VEYFKON Pitch</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-    font-family:'Inter',sans-serif;
-    background:#0c111d;
-    color:#f1f5f9;
+    font-family:'Inter', sans-serif;
+    background:#ffffff;
+    color:#111111;
     overflow:hidden;
 }
 
 .wrapper{
     display:flex;
-    width:800vw;
+    width:500vw;
     height:100vh;
-    transition:transform 0.8s ease;
+    transition:transform 0.6s ease;
 }
 
 .slide{
     width:100vw;
     height:100vh;
-    padding:80px 10%;
+    padding:100px 12%;
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
 .left{
-    width:50%;
+    width:60%;
 }
 
 .right{
-    width:40%;
+    width:35%;
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
-h1,h2{
+h1{
+    font-size:56px;
+    font-weight:700;
+    margin-bottom:40px;
+    line-height:1.1;
+}
+
+h2{
+    font-size:44px;
     font-weight:600;
-    margin-bottom:30px;
-    color:#38bdf8;
+    margin-bottom:40px;
 }
 
 ul{
@@ -55,11 +62,11 @@ ul{
 }
 
 li{
-    margin-bottom:20px;
-    font-size:20px;
+    font-size:22px;
+    margin-bottom:22px;
     opacity:0;
     transform:translateY(10px);
-    transition:all 0.5s ease;
+    transition:all 0.4s ease;
 }
 
 li.visible{
@@ -68,24 +75,30 @@ li.visible{
 }
 
 .placeholder{
-    width:420px;
-    height:260px;
-    border:2px dashed rgba(56,189,248,0.5);
+    width:100%;
+    height:300px;
+    border:1px solid #e5e5e5;
     display:flex;
     align-items:center;
     justify-content:center;
     font-size:14px;
-    color:#38bdf8;
-    opacity:0.5;
+    color:#999;
 }
 
 .logo{
     position:fixed;
-    top:30px;
-    left:40px;
+    top:40px;
+    left:12%;
     font-weight:700;
     letter-spacing:2px;
-    color:#38bdf8;
+}
+
+.progress{
+    position:fixed;
+    bottom:40px;
+    left:12%;
+    font-size:14px;
+    color:#999;
 }
 
 </style>
@@ -93,21 +106,22 @@ li.visible{
 <body>
 
 <div class="logo">VEYFKON</div>
+<div class="progress" id="progress">01 / 04</div>
 
 <div class="wrapper" id="slider">
 
 <!-- Slide 1 -->
 <div class="slide">
     <div class="left">
-        <h1>Mobile Energy System</h1>
+        <h1>Mobile Energy<br>für urbane E-Mobilität</h1>
         <ul>
-            <li>Flexible Energie für E-Mobilität</li>
-            <li>Sofort einsatzbereit</li>
-            <li>Skalierbares Versorgungssystem</li>
+            <li>Flexible Energieeinheiten</li>
+            <li>Vor-Ort Versorgung</li>
+            <li>B2B Fokus auf Flotten</li>
         </ul>
     </div>
     <div class="right">
-        <div class="placeholder">Titelbild / Konzept</div>
+        <div class="placeholder">Bild / Konzeptvisualisierung</div>
     </div>
 </div>
 
@@ -116,9 +130,9 @@ li.visible{
     <div class="left">
         <h2>Problem</h2>
         <ul>
-            <li>Carsharing-Fahrzeuge bleiben liegen</li>
-            <li>Ladeinfrastruktur nicht flächendeckend</li>
-            <li>Standzeit = Umsatzverlust</li>
+            <li>Carsharing-Fahrzeuge mit leerem Akku</li>
+            <li>Ladepunkte nicht immer verfügbar</li>
+            <li>Stillstand erzeugt Umsatzverlust</li>
         </ul>
     </div>
     <div class="right">
@@ -132,12 +146,27 @@ li.visible{
         <h2>Solution</h2>
         <ul>
             <li>Mobile Batterieeinheit</li>
-            <li>Vor-Ort-Energieversorgung</li>
-            <li>B2B-Modell für Flotten</li>
+            <li>Schnelle Integration</li>
+            <li>Skalierbar für Städte</li>
         </ul>
     </div>
     <div class="right">
         <div class="placeholder">Systemgrafik</div>
+    </div>
+</div>
+
+<!-- Slide 4 -->
+<div class="slide">
+    <div class="left">
+        <h2>What I Need</h2>
+        <ul>
+            <li>Feedback & Validierung</li>
+            <li>Technisches Sparring</li>
+            <li>Netzwerk & Partnerschaften</li>
+        </ul>
+    </div>
+    <div class="right">
+        <div class="placeholder">Team / Roadmap</div>
     </div>
 </div>
 
@@ -150,38 +179,42 @@ let pointIndex = 0;
 
 const slides = document.querySelectorAll(".slide");
 const slider = document.getElementById("slider");
+const progress = document.getElementById("progress");
 
-function showNextPoint(){
+function updateProgress(){
+    progress.textContent = 
+    "0" + (slideIndex+1) + " / 0" + slides.length;
+}
+
+function next(){
     const points = slides[slideIndex].querySelectorAll("li");
 
     if(pointIndex < points.length){
         points[pointIndex].classList.add("visible");
         pointIndex++;
-    } else {
-        if(slideIndex < slides.length - 1){
-            slideIndex++;
-            slider.style.transform = `translateX(-${slideIndex * 100}vw)`;
-            pointIndex = 0;
-        }
+    } else if(slideIndex < slides.length - 1){
+        slideIndex++;
+        slider.style.transform = `translateX(-${slideIndex * 100}vw)`;
+        pointIndex = 0;
+        updateProgress();
     }
 }
 
-function showPrevSlide(){
+function prev(){
     if(slideIndex > 0){
         slideIndex--;
         slider.style.transform = `translateX(-${slideIndex * 100}vw)`;
         pointIndex = slides[slideIndex].querySelectorAll("li").length;
+        updateProgress();
     }
 }
 
 document.addEventListener("keydown", e => {
-    if(e.key === "ArrowRight"){
-        showNextPoint();
-    }
-    if(e.key === "ArrowLeft"){
-        showPrevSlide();
-    }
+    if(e.key === "ArrowRight") next();
+    if(e.key === "ArrowLeft") prev();
 });
+
+updateProgress();
 
 </script>
 
