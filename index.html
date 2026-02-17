@@ -3,220 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VEYFKON Pitch</title>
+<title>Mobile Energy Pitch – Volkan Seyfi</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-    font-family:'Inter', sans-serif;
-    background:#ffffff;
-    color:#111111;
-    overflow:hidden;
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #111;
+    line-height: 1.6;
 }
 
-.wrapper{
-    display:flex;
-    width:500vw;
-    height:100vh;
-    transition:transform 0.6s ease;
+section {
+    padding: 100px 12%;
+    border-bottom: 1px solid #eee;
 }
 
-.slide{
-    width:100vw;
-    height:100vh;
-    padding:100px 12%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-.left{
-    width:60%;
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-.right{
-    width:35%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+p {
+    font-size: 18px;
+    max-width: 700px;
 }
 
-h1{
-    font-size:56px;
-    font-weight:700;
-    margin-bottom:40px;
-    line-height:1.1;
+ul {
+    font-size: 18px;
+    max-width: 700px;
 }
 
-h2{
-    font-size:44px;
-    font-weight:600;
-    margin-bottom:40px;
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-ul{
-    list-style:none;
+.sub {
+    font-weight: 300;
+    font-size: 20px;
+    margin-top: 10px;
 }
 
-li{
-    font-size:22px;
-    margin-bottom:22px;
-    opacity:0;
-    transform:translateY(10px);
-    transition:all 0.4s ease;
+.highlight {
+    color: #0066ff;
+    font-weight: 600;
 }
 
-li.visible{
-    opacity:1;
-    transform:translateY(0);
+footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 14px;
+    color: #777;
 }
-
-.placeholder{
-    width:100%;
-    height:300px;
-    border:1px solid #e5e5e5;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:14px;
-    color:#999;
-}
-
-.logo{
-    position:fixed;
-    top:40px;
-    left:12%;
-    font-weight:700;
-    letter-spacing:2px;
-}
-
-.progress{
-    position:fixed;
-    bottom:40px;
-    left:12%;
-    font-size:14px;
-    color:#999;
-}
-
 </style>
 </head>
+
 <body>
 
-<div class="logo">VEYFKON</div>
-<div class="progress" id="progress">01 / 04</div>
+<section class="hero">
+    <h1>Mobiles Batterie-Versorgungssystem</h1>
+    <div class="sub">Flexible Energie für urbane E-Mobilität</div>
+    <p>
+        Volkan Seyfi · Gebäude- & Haustechnik · Fachinformatiker Systemintegration
+    </p>
+</section>
 
-<div class="wrapper" id="slider">
+<section>
+    <h2>Problem</h2>
+    <ul>
+        <li>E-Autos bleiben liegen oder stehen ungünstig</li>
+        <li>Carsharing-Fahrzeuge blockieren Parkflächen</li>
+        <li>Ladeinfrastruktur wächst langsamer als Bedarf</li>
+    </ul>
+</section>
 
-<!-- Slide 1 -->
-<div class="slide">
-    <div class="left">
-        <h1>Mobile Energy<br>für urbane E-Mobilität</h1>
-        <ul>
-            <li>Flexible Energieeinheiten</li>
-            <li>Vor-Ort Versorgung</li>
-            <li>B2B Fokus auf Flotten</li>
-        </ul>
-    </div>
-    <div class="right">
-        <div class="placeholder">Bild / Konzeptvisualisierung</div>
-    </div>
-</div>
+<section>
+    <h2>Solution</h2>
+    <ul>
+        <li>Mobile Batterieeinheiten für Vor-Ort-Versorgung</li>
+        <li>Start mit kompakten Einheiten (z.B. Lastenrad / Fahrzeug)</li>
+        <li>Skalierung über Flotte bis Containerlösung</li>
+    </ul>
+</section>
 
-<!-- Slide 2 -->
-<div class="slide">
-    <div class="left">
-        <h2>Problem</h2>
-        <ul>
-            <li>Carsharing-Fahrzeuge mit leerem Akku</li>
-            <li>Ladepunkte nicht immer verfügbar</li>
-            <li>Stillstand erzeugt Umsatzverlust</li>
-        </ul>
-    </div>
-    <div class="right">
-        <div class="placeholder">Urbanes Szenario</div>
-    </div>
-</div>
+<section>
+    <h2>Market</h2>
+    <ul>
+        <li>Wachsender E-Mobilitätsmarkt</li>
+        <li>Urbaner Fokus: Städte, Carsharing, Events</li>
+        <li>Bedarf an flexibler Übergangslösung</li>
+    </ul>
+</section>
 
-<!-- Slide 3 -->
-<div class="slide">
-    <div class="left">
-        <h2>Solution</h2>
-        <ul>
-            <li>Mobile Batterieeinheit</li>
-            <li>Schnelle Integration</li>
-            <li>Skalierbar für Städte</li>
-        </ul>
-    </div>
-    <div class="right">
-        <div class="placeholder">Systemgrafik</div>
-    </div>
-</div>
+<section>
+    <h2>Business Model</h2>
+    <ul>
+        <li>Servicegebühr pro Einsatz</li>
+        <li>B2B-Kooperationen</li>
+        <li>Langfristig Container-Leasing</li>
+    </ul>
+</section>
 
-<!-- Slide 4 -->
-<div class="slide">
-    <div class="left">
-        <h2>What I Need</h2>
-        <ul>
-            <li>Feedback & Validierung</li>
-            <li>Technisches Sparring</li>
-            <li>Netzwerk & Partnerschaften</li>
-        </ul>
-    </div>
-    <div class="right">
-        <div class="placeholder">Team / Roadmap</div>
-    </div>
-</div>
+<section>
+    <h2>Traction</h2>
+    <ul>
+        <li>Konzept strukturiert ausgearbeitet</li>
+        <li>Pitch-Einladung erhalten</li>
+        <li>Team im Aufbau</li>
+    </ul>
+</section>
 
-</div>
+<section>
+    <h2>Vision</h2>
+    <p>
+        Eine Übergangslösung, die <span class="highlight">heute hilft</span>,
+        bis neue Technologien entwickelt sind –
+        und <span class="highlight">morgen weltweit einsetzbar</span> ist.
+    </p>
+</section>
 
-<script>
+<section>
+    <h2>What I Need from TUM Venture Labs</h2>
+    <ul>
+        <li>Mentoring & strukturiertes Feedback</li>
+        <li>Technische und wirtschaftliche Validierung</li>
+        <li>Netzwerk & Unterstützung beim Teamaufbau</li>
+    </ul>
+</section>
 
-let slideIndex = 0;
-let pointIndex = 0;
-
-const slides = document.querySelectorAll(".slide");
-const slider = document.getElementById("slider");
-const progress = document.getElementById("progress");
-
-function updateProgress(){
-    progress.textContent = 
-    "0" + (slideIndex+1) + " / 0" + slides.length;
-}
-
-function next(){
-    const points = slides[slideIndex].querySelectorAll("li");
-
-    if(pointIndex < points.length){
-        points[pointIndex].classList.add("visible");
-        pointIndex++;
-    } else if(slideIndex < slides.length - 1){
-        slideIndex++;
-        slider.style.transform = `translateX(-${slideIndex * 100}vw)`;
-        pointIndex = 0;
-        updateProgress();
-    }
-}
-
-function prev(){
-    if(slideIndex > 0){
-        slideIndex--;
-        slider.style.transform = `translateX(-${slideIndex * 100}vw)`;
-        pointIndex = slides[slideIndex].querySelectorAll("li").length;
-        updateProgress();
-    }
-}
-
-document.addEventListener("keydown", e => {
-    if(e.key === "ArrowRight") next();
-    if(e.key === "ArrowLeft") prev();
-});
-
-updateProgress();
-
-</script>
+<footer>
+    © 2026 Volkan Seyfi
+</footer>
 
 </body>
 </html>
