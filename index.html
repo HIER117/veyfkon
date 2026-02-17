@@ -3,98 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mobile Energy Pitch – Volkan Seyfi</title>
+<title>Mobile Energy – Veyfkon</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+* {margin:0;padding:0;box-sizing:border-box;}
+
 body {
-    margin: 0;
     font-family: 'Inter', sans-serif;
-    background: #ffffff;
-    color: #111;
-    line-height: 1.6;
+    background: linear-gradient(135deg,#0f172a,#0b0f1a);
+    color: #e5e7eb;
+    overflow-x:hidden;
 }
 
 section {
-    padding: 100px 12%;
-    border-bottom: 1px solid #eee;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:80px 12%;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    animation: fadeIn 1.2s ease;
 }
 
 h1 {
-    font-size: 48px;
-    font-weight: 600;
-    margin-bottom: 20px;
+    font-size:52px;
+    font-weight:700;
+    margin-bottom:20px;
 }
 
 h2 {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 20px;
+    font-size:32px;
+    font-weight:600;
+    margin-bottom:25px;
+    color:#38bdf8;
 }
 
-p {
-    font-size: 18px;
-    max-width: 700px;
+p, li {
+    font-size:18px;
+    line-height:1.7;
+    max-width:800px;
 }
 
 ul {
-    font-size: 18px;
-    max-width: 700px;
+    list-style:none;
 }
 
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+ul li::before {
+    content:"— ";
+    color:#38bdf8;
 }
 
-.sub {
-    font-weight: 300;
-    font-size: 20px;
-    margin-top: 10px;
+.hero span {
+    color:#38bdf8;
 }
 
-.highlight {
-    color: #0066ff;
-    font-weight: 600;
+.logo {
+    position:fixed;
+    top:30px;
+    left:40px;
+    font-weight:700;
+    font-size:20px;
+    letter-spacing:2px;
+    color:#38bdf8;
 }
 
 footer {
-    text-align: center;
-    padding: 40px;
-    font-size: 14px;
-    color: #777;
+    text-align:center;
+    padding:40px;
+    font-size:14px;
+    color:#6b7280;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+@media(max-width:768px){
+    h1 {font-size:36px;}
+    h2 {font-size:24px;}
 }
 </style>
 </head>
 
 <body>
 
+<div class="logo">VEYFKON</div>
+
 <section class="hero">
-    <h1>Mobiles Batterie-Versorgungssystem</h1>
-    <div class="sub">Flexible Energie für urbane E-Mobilität</div>
+    <h1>Mobiles Batterie-<span>Versorgungssystem</span></h1>
     <p>
-        Volkan Seyfi · Gebäude- & Haustechnik · Fachinformatiker Systemintegration
+        Flexible Energie für urbane E-Mobilität<br>
+        Volkan Seyfi · 2026
     </p>
 </section>
 
 <section>
     <h2>Problem</h2>
     <ul>
-        <li>E-Autos bleiben liegen oder stehen ungünstig</li>
+        <li>E-Autos bleiben liegen</li>
         <li>Carsharing-Fahrzeuge blockieren Parkflächen</li>
-        <li>Ladeinfrastruktur wächst langsamer als Bedarf</li>
+        <li>Infrastruktur wächst langsamer als Bedarf</li>
     </ul>
 </section>
 
 <section>
     <h2>Solution</h2>
     <ul>
-        <li>Mobile Batterieeinheiten für Vor-Ort-Versorgung</li>
-        <li>Start mit kompakten Einheiten (z.B. Lastenrad / Fahrzeug)</li>
-        <li>Skalierung über Flotte bis Containerlösung</li>
+        <li>Mobile Batterieeinheiten für Vor-Ort-Ladung</li>
+        <li>Start mit kompakten Einheiten (Fahrrad/Fahrzeug)</li>
+        <li>Skalierung zur Flotte und Containerlösung</li>
     </ul>
 </section>
 
@@ -102,7 +122,7 @@ footer {
     <h2>Market</h2>
     <ul>
         <li>Wachsender E-Mobilitätsmarkt</li>
-        <li>Urbaner Fokus: Städte, Carsharing, Events</li>
+        <li>Städte & urbane Mobilitätsanbieter</li>
         <li>Bedarf an flexibler Übergangslösung</li>
     </ul>
 </section>
@@ -112,14 +132,14 @@ footer {
     <ul>
         <li>Servicegebühr pro Einsatz</li>
         <li>B2B-Kooperationen</li>
-        <li>Langfristig Container-Leasing</li>
+        <li>Langfristige Container-Vermietung</li>
     </ul>
 </section>
 
 <section>
     <h2>Traction</h2>
     <ul>
-        <li>Konzept strukturiert ausgearbeitet</li>
+        <li>Konzept strukturiert entwickelt</li>
         <li>Pitch-Einladung erhalten</li>
         <li>Team im Aufbau</li>
     </ul>
@@ -128,23 +148,22 @@ footer {
 <section>
     <h2>Vision</h2>
     <p>
-        Eine Übergangslösung, die <span class="highlight">heute hilft</span>,
-        bis neue Technologien entwickelt sind –
-        und <span class="highlight">morgen weltweit einsetzbar</span> ist.
+        Eine Übergangslösung, die heute hilft<br>
+        und morgen weltweit skalierbar ist.
     </p>
 </section>
 
 <section>
-    <h2>What I Need from TUM Venture Labs</h2>
+    <h2>What I Need</h2>
     <ul>
         <li>Mentoring & strukturiertes Feedback</li>
-        <li>Technische und wirtschaftliche Validierung</li>
-        <li>Netzwerk & Unterstützung beim Teamaufbau</li>
+        <li>Technische & wirtschaftliche Validierung</li>
+        <li>Netzwerk & Teamaufbau</li>
     </ul>
 </section>
 
 <footer>
-    © 2026 Volkan Seyfi
+© 2026 VEYFKON · Volkan Seyfi
 </footer>
 
 </body>
