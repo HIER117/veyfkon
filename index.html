@@ -1,116 +1,346 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>VEYFKON – Mobile Energy Pitch</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-* {margin:0;padding:0;box-sizing:border-box;}
+  /* Base */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html {scroll-behavior: smooth;}
+  body{
+    font-family:"Inter",system-ui,Segoe UI,Roboto,Arial;
+    background:linear-gradient(135deg,#0b1220,#07101a);
+    color:#e8eef6;
+    -webkit-font-smoothing:antialiased;
+    overflow-y:scroll;
+  }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg,#0f172a,#0b0f1a);
-    color: #e5e7eb;
-    overflow-x:hidden;
-}
-
-nav {
+  /* NAV */
+  nav{
     position:fixed;
     top:0;
-    width:100%;
-    background:rgba(15,23,42,0.9);
-    backdrop-filter:blur(8px);
-    padding:20px 12%;
+    left:0;
+    right:0;
+    z-index:1200;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    z-index:1000;
-    border-bottom:1px solid rgba(255,255,255,0.05);
-}
+    padding:18px 10%;
+    background:rgba(7,12,20,0.85);
+    border-bottom:1px solid rgba(255,255,255,0.03);
+    transition:all .28s ease;
+    backdrop-filter: blur(6px);
+  }
+  nav.scrolled{ padding:10px 10%; background:rgba(7,12,20,0.95); }
+  .brand{ color:#38bdf8; font-weight:700; letter-spacing:2px; font-size:16px; }
+  nav ul{ display:flex; gap:28px; list-style:none; align-items:center; }
+  nav a{ color:#98a8b8; text-decoration:none; font-size:14px; transition:color .18s ease; }
+  nav a:hover{ color:#c5f0ff; }
+  nav a.active{ color:#38bdf8; font-weight:600; }
 
-nav ul {
-    display:flex;
-    gap:30px;
-    list-style:none;
-}
-
-nav a {
-    text-decoration:none;
-    color:#94a3b8;
-    font-size:14px;
-    transition:0.3s;
-}
-
-nav a:hover {
-    color:#38bdf8;
-}
-
-section {
+  /* Page layout */
+  main{ margin-top:78px; } /* space for nav */
+  section{
     min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:120px 12% 80px 12%;
-    border-bottom:1px solid rgba(255,255,255,0.05);
-}
+    padding:88px 10%;
+    gap:48px;
+    border-bottom:1px solid rgba(255,255,255,0.02);
+  }
 
-.left {
-    width:55%;
-}
+  /* columns */
+  .left{ width:58%; }
+  .right{ width:38%; display:flex; align-items:center; justify-content:center; }
 
-.right {
-    width:40%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
+  /* headings */
+  h1{ font-size:46px; line-height:1.02; color:#eafcff; margin-bottom:18px; }
+  h1 span{ color:#38bdf8; }
+  h2{ font-size:28px; color:#9fe9ff; margin-bottom:20px; font-weight:600; }
+  p, li{ font-size:17px; color:#cfeef8; line-height:1.65; max-width:760px; }
 
-.image-placeholder {
+  ul{ list-style:none; padding-left:0; }
+  ul li::before{ content:"— "; color:#38bdf8; margin-right:8px; }
+
+  /* image placeholder */
+  .image-box{
     width:100%;
-    height:280px;
-    border:2px dashed rgba(56,189,248,0.4);
+    height:320px;
+    border-radius:10px;
+    border:2px dashed rgba(56,189,248,0.18);
+    background:linear-gradient(180deg, rgba(56,189,248,0.03), rgba(56,189,248,0.01));
     display:flex;
     align-items:center;
     justify-content:center;
-    color:#38bdf8;
-    opacity:0.5;
-}
-
-h1 {
-    font-size:52px;
-    font-weight:700;
-    margin-bottom:20px;
-}
-
-h2 {
-    font-size:32px;
-    font-weight:600;
-    margin-bottom:25px;
-    color:#38bdf8;
-}
-
-p, li {
-    font-size:18px;
-    line-height:1.7;
-    max-width:700px;
-}
-
-ul {list-style:none;}
-ul li::before {content:"— "; color:#38bdf8;}
-
-.hero span {color:#38bdf8;}
-
-footer {
+    color:rgba(56,189,248,0.7);
     text-align:center;
-    padding:40px;
-    font-size:14px;
-    color:#6b7280;
-}
+    padding:16px;
+    position:relative;
+    overflow:hidden;
+  }
+  .image-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    border-radius:8px;
+  }
+  .image-box .caption{
+    position:absolute;
+    bottom:10px;
+    left:12px;
+    font-size:13px;
+    color:rgba(230,255,255,0.85);
+    background:rgba(0,0,0,0.25);
+    padding:6px 10px;
+    border-radius:6px;
+    backdrop-filter:blur(4px);
+  }
 
-@media(max-width:900px){
-    section {
-        flex-direction:column;
-        text-align:center;
-    }
-    .left, .right {
-        width:100%;
-    }
-    .right {
-        margin-top:40px;
-    }
-}
+  /* reveal animation for list items */
+  li.reveal{
+    opacity:0;
+    transform:translateY(8px);
+    transition:opacity .45s ease, transform .45s ease;
+  }
+  li.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  footer{
+    padding:36px 10%;
+    color:#7690a0;
+    font-size:14px;
+    text-align:center;
+  }
+
+  /* responsive */
+  @media (max-width:980px){
+    nav{ padding:14px 6% }
+    section{ padding:64px 6%; gap:28px; flex-direction:column; text-align:center; }
+    .left, .right{ width:100% }
+    .image-box{ height:260px }
+    h1{ font-size:32px }
+    h2{ font-size:22px }
+  }
 </style>
+</head>
+<body>
+
+<nav id="mainNav" aria-label="Primäre Navigation">
+  <div class="brand">VEYFKON</div>
+  <ul>
+    <li><a href="#hero">Start</a></li>
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#solution">Solution</a></li>
+    <li><a href="#market">Market</a></li>
+    <li><a href="#business">Business</a></li>
+    <li><a href="#traction">Traction</a></li>
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="#need">What I Need</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- HERO / START -->
+  <section id="hero" aria-labelledby="hero-title">
+    <div class="left">
+      <h1 id="hero-title">Mobiles Batterie-<span>Versorgungssystem</span></h1>
+      <p style="margin-bottom:18px">Flexible Energie für urbane E-Mobilität. Start als kompakte Notladungslösung – skalierbar bis zur Containerlogistik. Präsentation: Volkan Seyfi · 2026</p>
+      <p style="color:#9fbfd0;font-size:15px">Kurz: Vor-Ort-Energie dort, wo sie fehlt — schnell, leise, skalierbar.</p>
+    </div>
+    <div class="right">
+      <div class="image-box" aria-hidden="true">
+        <img src="img/slide1.jpg" alt="Konzeptbild Mobil" onerror="this.style.display='none'">
+        <div class="caption">Titelbild (ersetzen: img/slide1.jpg)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem" aria-labelledby="problem-title">
+    <div class="left">
+      <h2 id="problem-title">Problem</h2>
+      <ul>
+        <li class="reveal">E-Autos bleiben liegen — Pannen und leere Akkus kosten Zeit.</li>
+        <li class="reveal">Carsharing-Flotten verlieren Einsatzzeit durch leere Fahrzeuge.</li>
+        <li class="reveal">Ladeinfrastruktur wächst langsamer als Nachfrage in Städten.</li>
+      </ul>
+    </div>
+    <div class="right">
+      <div class="image-box">
+        <img src="img/slide2.jpg" alt="Urbanes Szenario" onerror="this.style.display='none'">
+        <div class="caption">Urbanes Szenario (img/slide2.jpg)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section id="solution" aria-labelledby="solution-title">
+    <div class="left">
+      <h2 id="solution-title">Solution</h2>
+      <ul>
+        <li class="reveal">Mobile Batterieeinheiten (Lastenfahrrad → Einsatzfahrzeug → Container)</li>
+        <li class="reveal">Vor-Ort-Notladung & gezielte Überbrückungsladungen</li>
+        <li class="reveal">B2B-Modelle für Carsharing, Events und Stadtwerke</li>
+      </ul>
+      <p style="margin-top:12px;color:#9fbfd0;font-size:15px">Nicht Ersatz, sondern Ergänzung: kurzfristig verfügbar, langfristig skalierbar.</p>
+    </div>
+    <div class="right">
+      <div class="image-box">
+        <img src="img/slide3.jpg" alt="Systemgrafik" onerror="this.style.display='none'">
+        <div class="caption">Systemgrafik (img/slide3.jpg)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKET -->
+  <section id="market" aria-labelledby="market-title">
+    <div class="left">
+      <h2 id="market-title">Market</h2>
+      <ul>
+        <li class="reveal">Wachsender E-Mobility Markt in Städten</li>
+        <li class="reveal">Carsharing-Anbieter als Haupt-B2B-Kunden</li>
+        <li class="reveal">Events, Logistik & Notfallversorgung als zusätzliche Märkte</li>
+      </ul>
+    </div>
+    <div class="right">
+      <div class="image-box">
+        <img src="img/slide4.jpg" alt="Markt / Diagramm" onerror="this.style.display='none'">
+        <div class="caption">Markt (img/slide4.jpg)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS -->
+  <section id="business" aria-labelledby="business-title">
+    <div class="left">
+      <h2 id="business-title">Business Model</h2>
+      <ul>
+        <li class="reveal">Pay-per-Service: Gebühr pro Einsatz</li>
+        <li class="reveal">B2B-Verträge mit Fahranbietern & Stadtwerken</li>
+        <li class="reveal">Skalierung: Vermietung & Pfand-Container</li>
+      </ul>
+    </div>
+    <div class="right">
+      <div class="image-box">
+        <img src="img/slide5.jpg" alt="Business / Revenue" onerror="this.style.display='none'">
+        <div class="caption">Revenue (img/slide5.jpg)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACTION -->
+  <section id="traction" aria-labelledby="traction-title">
+    <div class="left">
+      <h2 id="traction-title">Traction</h2>
+      <ul>
+        <li class="reveal">Konzept strukturiert ausgearbeitet</li>
+        <li class="reveal">Einladung zum Pitch erhalten (TUM Venture Labs)</li>
+        <li class="reveal">Erste Gespräche mit potenziellen Partnern</li>
+      </ul>
+    </div>
+    <div class="right">
+      <div class="image-box">
+        <img src="img/slide6.jpg" alt="Traction" onerror="this.style.display='none'">
+        <div class="caption">Traction (img/slide6.jpg)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section id="vision" aria-labelledby="vision-title">
+    <div class="left">
+      <h2 id="vision-title">Vision</h2>
+      <p>Eine Übergangslösung, die heute hilft, bis neue Technologien ausgereift sind — und morgen weltweit einsetzbar ist.</p>
+      <ul style="margin-top:18px">
+        <li class="reveal">Resiliente Städte</li>
+        <li class="reveal">Skalierbare Notfallinfrastruktur</li>
+        <li class="reveal">Globaler Pfand-Containerkreislauf</li>
+      </ul>
+    </div>
+    <div class="right">
+      <div class="image-box">
+        <img src="img/slide7.jpg" alt="Vision" onerror="this.style.display='none'">
+        <div class="caption">Vision (img/slide7.jpg)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I NEED -->
+  <section id="need" aria-labelledby="need-title">
+    <div class="left">
+      <h2 id="need-title">What I Need</h2>
+      <ul>
+        <li class="reveal">Mentoring & strukturiertes Feedback</li>
+        <li class="reveal">Technische Validierung & Pilotpartner</li>
+        <li class="reveal">Netzwerkzugang & Unterstützung beim Teamaufbau</li>
+      </ul>
+      <p style="margin-top:14px;color:#9fbfd0;font-size:15px">Bereit für Pilot in München — suche Unterstützer für die nächste Etappe.</p>
+    </div>
+    <div class="right">
+      <div class="image-box">
+        <img src="img/slide8.jpg" alt="Need" onerror="this.style.display='none'">
+        <div class="caption">Support (img/slide8.jpg)</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 VEYFKON · Volkan Seyfi
+</footer>
+
+<script>
+/* NAV: shrink + active link on scroll */
+const nav = document.getElementById('mainNav') || document.querySelector('nav');
+const links = document.querySelectorAll('nav a');
+const sections = document.querySelectorAll('main section');
+
+function onScroll(){
+  const y = window.scrollY;
+  if(y > 40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+
+  let currentId = '';
+  sections.forEach(sec=>{
+    const top = sec.offsetTop - 120;
+    if(window.pageYOffset >= top) currentId = sec.id;
+  });
+
+  links.forEach(a=>{
+    a.classList.toggle('active', a.getAttribute('href') === '#' + currentId);
+  });
+}
+window.addEventListener('scroll', onScroll);
+onScroll();
+
+/* REVEAL: list-item by intersection observer */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+    }
+  });
+},{threshold:0.18});
+
+document.querySelectorAll('li.reveal').forEach(li=> io.observe(li));
+
+/* Optional: highlight nav on click (smooth handled by CSS) */
+links.forEach(a=>{
+  a.addEventListener('click', (ev)=>{
+    // small delay to allow CSS smooth scroll then update active (optional)
+    setTimeout(()=> onScroll(), 400);
+  });
+});
+</script>
+
+</body>
+</html>
