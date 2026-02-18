@@ -1,59 +1,245 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impressum – Veyfkon</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 2rem;
-      line-height: 1.6;
-      color: #1e293b;
-      background-color: #f8fafc;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VEYFKON – Mobile Power Infrastructure</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:linear-gradient(135deg,#0f172a,#0b0f1a);
+    color:#e5e7eb;
+    overflow-x:hidden;
+}
+
+/* NAVIGATION */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(15,23,42,0.9);
+    backdrop-filter:blur(10px);
+    padding:20px 12%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+nav img{
+    height:40px;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:#94a3b8;
+    font-size:14px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* SECTIONS */
+
+section{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:120px 12% 80px 12%;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.left{width:55%;}
+.right{width:40%;display:flex;justify-content:center;align-items:center;}
+
+h1{
+    font-size:52px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+h2{
+    font-size:32px;
+    font-weight:600;
+    margin-bottom:25px;
+    color:#38bdf8;
+}
+
+p,li{
+    font-size:18px;
+    line-height:1.7;
+    max-width:700px;
+}
+
+ul{list-style:none;}
+ul li::before{content:"— ";color:#38bdf8;}
+
+/* HERO */
+
+.hero span{color:#38bdf8;}
+
+.cta{
+    margin-top:30px;
+    display:inline-block;
+    padding:14px 28px;
+    background:#38bdf8;
+    color:#0f172a;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.cta:hover{
+    background:#0ea5e9;
+}
+
+/* PARTNER SECTION */
+
+.partners{
+    padding:80px 12%;
+    text-align:center;
+    background:rgba(255,255,255,0.02);
+}
+
+.support-text{
+    font-size:14px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#94a3b8;
+    margin-bottom:30px;
+}
+
+.partners img{
+    max-width:350px;
+    opacity:0.85;
+    transition:0.3s;
+}
+
+.partners img:hover{
+    opacity:1;
+    transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px;
+    font-size:14px;
+    color:#6b7280;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+    section{
+        flex-direction:column;
+        text-align:center;
     }
-    h1, h2 {
-      color: #2563eb;
+    .left,.right{
+        width:100%;
     }
-    a {
-      color: #2563eb;
-      text-decoration: none;
+    .right{
+        margin-top:40px;
     }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+}
+</style>
 </head>
+
 <body>
-  <h1>Impressum</h1>
 
-  <h2>Angaben gemäß § 5 TMG</h2>
-  <p>
-    Veyfkon – IT Security & Webentwicklung<br>
-    Volkan Seyfi<br>
-    Neuhausen<br>
-    80637 München<br>
-    Deutschland
-  </p>
+<nav>
+    <img src="veyfkon-logo.png" alt="VEYFKON Logo">
+    <ul>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#solution">Lösung</a></li>
+        <li><a href="#market">Markt</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+    </ul>
+</nav>
 
-  <h2>Kontakt</h2>
-  <p>
-    E-Mail: <a href="mailto:kontakt@veyfkon.de">kontakt@veyfkon.de</a>
-  </p>
+<!-- HERO -->
+<section class="hero" id="vision">
+    <div class="left">
+        <h1>Mobile Power<br><span>Infrastructure</span></h1>
+        <p>VEYFKON entwickelt flexible, mobile Energiesysteme zur Ergänzung urbaner Ladeinfrastruktur. Wir schließen operative Lücken in der E-Mobilität.</p>
+        <a href="#contact" class="cta">Kontakt aufnehmen</a>
+    </div>
+</section>
 
-  <h2>Haftung für Inhalte</h2>
-  <p>
-    Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. 
-    Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
-  </p>
+<!-- PARTNER -->
+<section class="partners">
+    <p class="support-text">Supported by TUM Venture Labs – Battery Startup Incubator</p>
+    <img src="tum-battery.png" alt="TUM Battery Startup Incubator">
+</section>
 
-  <h2>Urheberrecht</h2>
-  <p>
-    Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
-  </p>
+<!-- PROBLEM -->
+<section id="problem">
+    <div class="left">
+        <h2>Das Problem</h2>
+        <ul>
+            <li>Wachsende E-Mobilität, begrenzte Infrastruktur</li>
+            <li>Stillstand von Flotten erzeugt Kosten</li>
+            <li>Unflexible Ladepunkte</li>
+        </ul>
+    </div>
+</section>
 
-  <p><a href="index.html">&larr; Zurück zur Startseite</a></p>
+<!-- SOLUTION -->
+<section id="solution">
+    <div class="left">
+        <h2>Unsere Lösung</h2>
+        <ul>
+            <li>Mobile Batterieeinheiten</li>
+            <li>Vor-Ort-Ladung</li>
+            <li>Modulare Skalierung</li>
+            <li>Integration in bestehende Systeme</li>
+        </ul>
+    </div>
+</section>
+
+<!-- MARKET -->
+<section id="market">
+    <div class="left">
+        <h2>Markt & Modell</h2>
+        <ul>
+            <li>B2B Fokus (Carsharing & Flotten)</li>
+            <li>Pay-per-Service</li>
+            <li>Langfristige Infrastrukturintegration</li>
+        </ul>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="left">
+        <h2>Kontakt</h2>
+        <p>Email: info@veyfkon.de</p>
+        <p>Website: www.veyfkon.de</p>
+    </div>
+</section>
+
+<footer>
+© 2026 VEYFKON – Mobile Power Infrastructure
+</footer>
+
 </body>
 </html>
